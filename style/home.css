@@ -1,0 +1,35 @@
+
+
+.container {
+    scroll-snap-type: y mandatory; 
+    overflow-y: scroll;
+    height: 100vh; 
+    /* hide scrollbar */
+    scrollbar-width: none;        /* Firefox */
+    -ms-overflow-style: none;     /* IE / Edge */ 
+} 
+
+
+.container::-webkit-scrollbar {
+    display: none;                /* Chrome / Safari */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

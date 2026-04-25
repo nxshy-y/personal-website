@@ -1,0 +1,73 @@
+.skill-group{ 
+    width: 350px;
+    height: 150px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 16px;
+    text-align: center;
+    padding: 40px;  
+    min-width: 50px;
+    background-color: rgb(228, 228, 118);
+    box-shadow: 0px 0px rgb(148, 39, 39);
+
+}
+
+.skill-group.animate {
+    animation: Move-Shadow 3s ease-out;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes Move-Shadow {
+
+    from {
+        box-shadow: 0px 0px rgb(148, 39, 39);
+    }
+    to {
+        box-shadow: 40px 40px  rgb(148, 39, 39); 
+    }
+}
+
+
+
+.skill-group h3 {
+  font-size: 20px; 
+  margin-left: 0px; 
+  display:inline-block;
+} 
+
+.skill-group p {
+    min-width:40px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.skill-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px; 
+}
+
+.Skills{
+    display: flex;
+    flex-direction: row;
+    gap: 60px; 
+    align-items: center;
+    position: relative;
+    left: 180px;
+}
+
+
+.social-icon{
+    display:inline-block;
+    object-fit: cover;
+    width:30px;
+    height:30px; 
+    margin-right: 10px;
+}
+
