@@ -4,15 +4,6 @@
     align-items: center;
     width: 100%;
     gap: 20px;
-    padding: 20px;
-}
-
-.title::before,
-.title::after {
-    content: '';
-    height: 6px;
-    background: black;
-    flex:auto;
 }
 
 .title h1 {
@@ -24,40 +15,123 @@
     white-space: nowrap;
 }
 
+.title::before,
+.title::after {
+    content: '';
+    height: 6px;
+    background: black;
+    flex: 1;
+}
 
 .timeline{
     position: relative; 
-    height: 200px;
+    height: 500px;
     width: 100%;
-    display: flex;  
-    flex-direction: column;
-    align-items: flex-start;
-    top: 15%
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 30px;
     
 }
 
-.top-row {
-    display: flex;
-    flex-direction: row;
-}
 
-.bottom-row {
-    display: flex;
-    justify-content: center;
-}
-
-
-.top-row::after{
+.timeline::after{
     content: '';
     position: absolute;
     width: 100%;
     height: 6px;
     border-radius: 10px;
-    background: rgb(148, 39, 39);
-    bottom: -20%; 
-    left: 0; 
-    transform: translateY(-50%);
+    background: rgb(148, 39, 39); 
     z-index: -1;
+    top: 75%;
+} 
+
+
+.card {
+    width: 300px;
+    height: 220px;
+    background-color: rgb(228, 228, 118);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    text-align: left;
+    opacity: 1;
+    margin-left: 20px;
+}
+
+.down {
+    transform: translateY(130%);
+    .circle{
+        top: -28%;
+    }
+    
+
+}
+
+.up{
+    transform: translateY(-15%);
+    .circle{
+        bottom: -28%;
+    }
+
+
+}
+
+.project{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+/*If you have a class like class="project down" do it like this
+  '>' this symbol is only use for childs
+*/
+.project.down {
+    align-items: flex-start;
+}
+
+.circle {
+  width: 25px;
+  position: absolute;
+  height: 25px;
+  right: 50%;
+  background-color: black;
+  border: 4px solid #882939;
+  border-radius: 50%;
+  /* transform: scale(0.1); */
+} 
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: relative;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+/* ----------- ANIMATION  ------------------*/ 
+
+.circle.animate {
+  animation: popup 1s linear forwards;
+
+}
+
+@keyframes popup {
+
+    from {
+        transform: scale(0.1);
+    }
+    to{
+        transform: scale(1);
+    }
 } 
 
 .timeline.animate::after{
@@ -72,62 +146,6 @@
         width: 100%;
     }
 } 
-
-/*The card and dot pair*/
-
-.card {
-    width: 300px;
-    height: 220px;
-    background-color: rgb(228, 228, 118);
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-    border: none;
-    cursor: pointer;
-    padding: 20px;
-    text-align: left;
-    opacity: 0;
-}
-
-
-.project h3 {
-    font-size: 25px;
-}
-
-.project{
-    position: relative;
-    margin-left: 50px ;
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-}
-
-/*using variables in css*/
-.circle {
-  width: 25px;
-  height: 25px;
-  background-color: black;
-  border: 4px solid #882939;
-  border-radius: 50%;
-  /* transform: scale(0.1); */
-  
-}
-
-/* 
-.circle.animate {
-  animation: popup 1s linear forwards;
-
-}
-
-@keyframes popup {
-
-    from {
-        transform: scale(0.1);
-    }
-    to{
-        transform: scale(1);
-    }
-} */
 
 .card.animate{ 
     animation: fadeup 3s forwards;
@@ -146,50 +164,6 @@
     }
 }
 
-
-/* The actual content */
-.projects content {
-  padding: 20px 30px;
-  background-color: white;
-  position: relative;
-  border-radius: 6px;
-}
-
-
-.slide-show {
-  margin-top: 20px;
-  height: 100%;
-  width: 100%;
-  overflow:hidden;
-}
-
-.slides img {
-    width: 100%;
-    height: 140.73px;
-    object-fit: cover;
-    transition: .5s ease;
-    backface-visibility: hidden;
-}
-
-
-.unisource-slide img {
-    margin-top: 20px;
-    height: 140.73px;
-    width: 100%;
-} 
-
-
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
 .card:hover .image {
   opacity: 0.3;
 }
@@ -197,5 +171,3 @@
 .card:hover .middle {
   opacity: 1;
 }
-
-

@@ -33,7 +33,7 @@ elementsToObserve.forEach(el => {
 // --------------------
 // FORM HANDLING
 // --------------------
-const form = document.getElementById("contact-form");
+const form = document.getElementById("contact-section");
 const successCard = document.getElementById("success-card");
 
 form.addEventListener("submit", async (e) => {
