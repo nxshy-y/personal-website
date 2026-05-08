@@ -59,7 +59,7 @@
     cursor: pointer;
     padding: 20px;
     text-align: left;
-    opacity: 1;
+    opacity: 0;
     margin-left: 20px;
 }
 
@@ -102,40 +102,111 @@
   background-color: black;
   border: 4px solid #882939;
   border-radius: 50%;
+  opacity: 0;
   /* transform: scale(0.1); */
 } 
 
 .middle {
   transition: .5s ease;
   opacity: 0;
-  position: relative;
-  top: 45%;
+  position: absolute;
+  bottom: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  
 }
+
+/*---------------- SLIDE - SHOW -------------------------*/
+
+.slide {
+    width: 260px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.show{
+    position: relative;
+    width: 100%; /*expands to fit all images*/
+    display: flex;
+    margin-top: 20px;
+
+    img {
+        width: 100%;
+        height: 140.73px;
+        object-fit: cover;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+}
+/*---------------SLIDE - SHOW ANIMATION ------------------------------------------*/
+/**/
+.timeline.in-view .circle {
+    animation: popup 1s linear forwards;
+    
+}
+
+
+.timeline.in-view .card {
+    animation: fadeup 3s forwards;
+    animation-delay: 1s; 
+
+    &:nth-child(1) {
+        animation-delay: 1.5s;
+    }
+    &:nth-child(2) {
+        animation-delay: 2.5s;
+    }
+    &:nth-child(3) {
+        animation-delay: 3.5s;
+    }
+
+}
+
+.timeline.in-view .show {
+    animation: moving 16s linear infinite;
+    animation-delay: 2s;
+}
+
+@keyframes moving {
+
+    0%, 25% {
+        transform: translateX(0%);
+    }
+    33%, 66% {
+        transform: translateX(-100%);
+    }
+    75%, 100% {
+        transform: translateX(-200%);
+    }
+}
+
+
 
 
 
 /* ----------- ANIMATION  ------------------*/ 
 
-.circle.animate {
+/* .circle.animate {
   animation: popup 1s linear forwards;
 
-}
+} */
 
 @keyframes popup {
 
     from {
+        opacity: 0;
         transform: scale(0.1);
     }
     to{
+        opacity: 1;
         transform: scale(1);
     }
 } 
 
 .timeline.animate::after{
-    animation: moveline 3s linear forwards;
+    animation: moveline 4s linear forwards;
+   
 }
 
 @keyframes moveline {
@@ -147,9 +218,10 @@
     }
 } 
 
-.card.animate{ 
+/* .card.animate{ 
+    animation-delay: 1s;
     animation: fadeup 3s forwards;
-}
+} */
 
 
 

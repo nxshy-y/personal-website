@@ -1,0 +1,62 @@
+                 <div class="project up">
+
+                            <div class="card ">
+                                <h3>Unisource</h3>
+
+                                <div class="unisource-slide">
+                                    <!-- <img class="image" src="images/course_diagram.png"> -->
+                                </div>
+
+                                <div class="middle">
+                                    <p>The project was an app that updated up-to-date information regarding courses offered through lehigh University. It were to update to multiple site simuatneously while maintaing</p>
+                                </div>
+                            </div>
+                            
+                            <div class="circle"></div>
+                        </div> 
+                        
+
+                        
+                        <div class="project down">
+                            
+                            <div class="circle"></div>
+
+                            <div class="card " >
+                                    <h3>Excel to Python</h3>
+                                    <div class="slide">
+                                        <div class="show">
+                                            <img class="image" src="images/conceptual_design.png">
+                                            <img class="image" src="images/diagram.png">
+                                            <img class="image" src="images/example_usage.png">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="middle">
+                                        <p>TESTING</p>
+                                    </div>                                    
+                            </div> 
+
+                        </div> 
+
+
+
+ 
+
+                        <div class="project up" >
+                            <div class="card">
+                                <h3>Dojo Tutor</h3>
+                                    <div class="slide">
+                                        <div class="show">
+                                                <img class="image" src="images/homework_dojo.png">
+                                                <img class="image" src="images/class_session.png">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="middle">
+                                        <p>TESTING</p>
+                                    </div>
+                            </div>
+                            
+                            <div class="circle"></div>
+
+                        </div>
