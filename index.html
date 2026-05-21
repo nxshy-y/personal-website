@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style/skill.css">    
     <link rel="stylesheet" href="style/bio.css">  
     <link rel="stylesheet" href="style/contact.css">
+    <link rel="stylesheet" href="style/navbar.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">  
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sekuya&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sekuya&display=swap" rel="stylesheet">
@@ -19,8 +20,25 @@
 </head>
 
 <body>
+    
+    <nav class="navbar">
+
+        <div class="menu"> <i class="fa-solid fa-bars"></i>
+            <ul class="nav_page"> 
+                <li class="nav-text"><a href="#Intro">Intro</a></li>
+                <li class="nav-text"  ><a href="#About-me">About me</a></li>
+                <li class="nav-text"  ><a href="#projects">Projects</a></li>
+                <li class="nav-text" ><a href="#Skills">Skills</a></li>
+                <li class="nav-text" ><a href="#Contact">Contacts</a></li>
+            </ul>
+        </div>
+            
+    </nav>
+
+
     <div class="container">  
-        <section class="Intro">
+
+        <section id="Intro" class="Intro">
             <h2 id="name">Nasheeta Yeamin</h2>          
             <h3 id="degree"> B.S in Computer Science</h3>
         
@@ -43,7 +61,7 @@
         </div>
         </section>
 
-        <section class="About-me">
+        <section id="About-me" class="About-me">
         
             <div class="Biography">
                 <h3>About me</h3>
@@ -65,7 +83,7 @@
 
         </section> 
 
-       <section class="projects"> 
+       <section id="projects" class="projects"> 
             <div class="title">
                 <h1> Projects & Experience</h1>
             </div>
@@ -73,7 +91,7 @@
                     
                         <div class="project up" >
 
-                            <div class="card ">
+                            <div class="card " style="animation-delay:1s;">
                                 <h3>Unisource</h3>
 
                                 <div class="unisource-slide">
@@ -85,16 +103,16 @@
                                 </div>
                             </div>
                             
-                            <div class="circle" style="animation-delay:1s;"></div>
+                            <div class="circle" style="animation-delay:0.5s;"></div>
                         </div> 
                         
 
                         
                         <div class="project down" id="second">
                             
-                            <div class="circle" style="animation-delay:2s;" ></div>
+                            <div class="circle" style="animation-delay:1.5s;" ></div>
 
-                            <div class="card " >
+                            <div class="card " style="animation-delay:2s;">
                                     <h3>Excel to Python</h3>
                                     <div class="slide">
                                         <div class="show">
@@ -116,7 +134,7 @@
  
 
                         <div class="project up">
-                            <div class="card">
+                            <div class="card" style="animation-delay: 3s;">
                                 <h3>Dojo Tutor</h3>
                                     <div class="slide">
                                         <div class="show">
@@ -130,7 +148,7 @@
                                     </div>
                             </div>
                             
-                            <div class="circle" style="animation-delay:3s;"></div>
+                            <div class="circle" style="animation-delay:2.5s;"></div>
 
                         </div>
 
@@ -141,7 +159,7 @@
 
 
 
-        <section class="Skills">
+        <section id="Skills" class="Skills">
 
             <div class="skill-group" id="front-end-card">
                 <div class="skill-header">
@@ -182,54 +200,54 @@
                 
         </section> 
 
-        <section class="Contact-Form">
-
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                    <img class="gritty" src="images/gritty..jpg">
-                    <p> Nasheeta Yeamin </p>
-                    <p> Software Engineer</p>
-                    </div>
-                    <div class="flip-card-back">
-                    <img class="gritty" src="images/gritty..jpg">
-                    <h1>Nasheeta Yeamin</h1>
-                    <p>Phone Number: (516) 262 3894</p>
-                    <p>Email: nasheeta.ny@gmail.com</p>
-                    </div>
-                </div>
-            </div>
+        <section id="Contact" class="Contact-Form">
+            
            
-            <div class="contact-section">
+            <div class="contact-section" >
+            
+                <!---THE RESPONSE SECTION-->
+                <div  class="respone" data-fs-success> Message Received! </div>
+                <div class ="respone" data-fs-error>Oops! There was a problem submitting your form.</div>
+                
                 <!--This is the email submission form-->
-                <form action="https://formsubmit.co/56e6eab0052c82221940cb6a94fab8bc" method="POST" class="contact-left">
-                    <!--Honeypot: To catch spammers-->
-                    <input type="text" name="_honey" style="display:none;">
-                    <!--Disable Captcha-->
-                    <input type="hidden" name="_captcha" value="false">
+                <form id="my-form">
                     
                     <div class="contact-left-title">
                         <h2>Let's get in touch</h2>
                         <hr>
                     </div>
-                    <input type="hidden" name="access_key" value="5d1689ba-616b-44f5-ab99-f202a7eca2a6">
-                    <input type="text" name="name" placeholder="Your name" class="contact-inputs" required>
-                    <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
-                    <textarea name="message" placeholder="Your Message" class="contact-inputs"></textarea>
-                    <button type="submit" class="email-submit"> Send </button>
+                    <input type="text" name="name" placeholder="Your name" class="contact-inputs" required data-fs-field>
+                    <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required data-fs-field>
+                    <span data-fs-error="email"></span>
+                    <textarea name="message" placeholder="Your Message" class="contact-inputs" data-fs-field></textarea>
+                    <span data-fs-error="message"></span>
+                    <button type="submit" class="email-submit" data-fs-submit-btn> Send </button>
                 </form> 
-                <div class="success-card">
-                Message Sent!
-                </div>
+
+                <!---THE RESPONSE SECTION-->
+                <div data-fs-success> Message Received! </div>
+                <div data-fs-error>Oops! There was a problem submitting your form.</div>
             </div>
 
 
-        </section>
-
-        
+        </section>        
 
     </div>  
 
     <script src="/function/app.js"></script>
+
+    <!--- USING FORMSPREE SUBMIT--> 
+    <script>
+        window.formspree =
+            window.formspree ||
+            function () {
+            (formspree.q = formspree.q || []).push(arguments);
+            };
+        formspree("initForm", {
+            formElement: "#my-form",
+            formId: "xpqbozjd",
+        });
+        </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>

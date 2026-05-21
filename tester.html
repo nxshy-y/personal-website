@@ -2,18 +2,135 @@
 <html>
     <head>
         <meta charset="UTF-8">
+
+        <style>
+
+            body {
+                margin: 0;
+            }
+
+            li {
+                list-style-type: none;
+            }
+
+            
+
+            .nav-text {
+                font-weight: bold;
+                cursor: pointer;
+                text-align: center;
+                width: 20vh;
+                transform: translateY(0rem);
+                transition: transform 300ms ease;
+                
+                a {
+                    text-decoration: none;
+                    color: black;
+                    transition: color 300ms ease;
+
+                    &::after {
+                        content: "";
+                        height: 2px;
+                        z-index: 2;
+                        width: 2.3rem;
+                        display: block;
+                        background-color: black; 
+                        transform:  translateX(3.2rem) scale(0);
+                        transition: opacity 0.3s ease, transform 0.3s ease;
+                    
+                    } 
+                    
+                    &:hover{
+                        color: rgb(165, 42, 42);
+
+                        &::after {
+                            transform: translateX(3.2rem) scale(1);
+                        }
+
+                    }
+
+                    
+                }
+
+                &:hover {
+                    transform: translateY(-0.3rem);
+                }
+
+
+
+            }
+
+
+
+
+            .nav_page {
+                list-style: none;
+                background-color: rgba(238, 238, 206, 0.868);
+                width: 20vh;
+                height: 20vh;
+                line-height: 1.5rem;
+                padding-left: 5px;
+                padding-top:0.5rem;
+                z-index: 1;
+                top: 0rem;
+                position:absolute;
+                opacity: 0;
+                transform: translateX(0rem);
+                transition: opacity 0.3s 0.5s ease, transform 0.3s 0.5s ease;
+
+            }
+
+            p {
+                padding: 20 20 20 20;
+                height: auto;
+                border: none;
+                cursor: pointer;
+                opacity: 1;
+                transition: opacity 0.5s ease 0.5s;
+                position: relative;
+            }
+
+            .menu {
+
+
+                &:hover > p {
+                    opacity: 0;
+
+                }
+
+                &:hover > .nav_page {
+                    opacity: 1;
+                    transform: translateX(1rem);
+                }
+
+            }
+
+
+
+
+
+            
+
+
+        </style>
+
     </head>
+
     <body>
 
-    <div id="divs">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-    </div>
+    <nav class="navbar">
+
+                <div class="menu"> <p>Test</p>
+                    <ul class="nav_page"> 
+                        <li class="nav-text"><a href="#Intro">Intro</a></li>
+                        <li class="nav-text"  ><a href="#About-me">About me</a></li>
+                        <li class="nav-text"  ><a href="#projects">Projects</a></li>
+                        <li class="nav-text" ><a href="#Skills">Skills</a></li>
+                        <li class="nav-text" ><a href="#Contact">Contacts</a></li>
+                    </ul>
+                </div>
+            
+    </nav>
 
     <script src="function/test.js"></script>
     </body>
