@@ -32,8 +32,6 @@ elementsToObserve.forEach(el => {
 // --------------------
 // FORM HANDLING
 // --------------------
-const submit_msg = document.querySelectorAll('.response')
-//after 3 seconds it become an opacity of 0
 
 const messages = [
   document.querySelector("[data-fs-success]"),
@@ -46,11 +44,11 @@ const msg_observer = new IntersectionObserver((entries) => {
   })
 });
 
-// --------------------
-// Nav Bar
-// --------------------
+messages.forEach(msg => {
+  if (msg) msg_observer.observe(msg); // avoids null errors
+});
 
-const menu = document.getElementById("menu")
+
 
 
 

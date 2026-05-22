@@ -71,17 +71,19 @@
     border: 2px solid black;
 }
 
-[data-fs-success],[data-fs-error] {
+[data-fs-success],
+[data-fs-error] {
   color: lightcoral;
   font-weight: bold;
   margin-top: 1rem;
   padding: 20px;
-  /* add whatever you like */
-  transition: transformY(0);
   opacity: 1;
+  transform: translateY(0);
+}
 
-  &:active {
-    transition: transformY(-1) 1s ease-out;
-    opacity: 0;
-  }
+[data-fs-success].remove,
+[data-fs-error].remove {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s 2s ease, transform 0.5s 2s ease;
 }

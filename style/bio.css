@@ -17,13 +17,6 @@
     margin-bottom: 12%;
     margin-top: 4%;
     background-color: rgb(228, 228, 118);
-
-    transform-style: preserve-3d;
-    transform: 
-        perspective(5000px)
-        rotateY(20deg)
-        rotateX(20deg);
-    ;
        
 }
 
@@ -57,19 +50,19 @@
 .Biography::before {
     content: " ";
     position: absolute;
-    background-color: rgb(120, 7, 7);;
+    background-color: rgb(120, 7, 7);
     border-radius: 25px;
     width: 600px;
     height: 100%;
     left: 0%;
     bottom: 0%;
     z-index: -1;
-    transition: left 1s ease , bottom 1s ease ;
+    transform: translateX(0%) translateY(0%);
+    transition: transform 1s ease ;
 }
 
-.Biography.animate::before {
-    left: 6.6%;
-    bottom: -6.6%;
+.Biography.animate::before{
+    transform: translateX(6.6%) translateY(6.6%);
 }
 
 .Biography::after {
