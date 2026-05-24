@@ -2,12 +2,14 @@
 // SELECTORS
 // --------------------
 const elementsToObserve = [
+  ...document.querySelectorAll(".contact-inputs"),
   document.querySelector(".timeline"),
   document.querySelector(".Intro"),
   document.querySelector("#name"),
+  document.querySelector("#my-form"),
   document.querySelector("#degree"),
   document.querySelector(".title"),
-  ...document.querySelectorAll(".skill-group"),
+  ...document.querySelectorAll(".skill-shadow"),
   ...document.querySelectorAll(".Biography")
 ];
 
@@ -18,9 +20,11 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     entry.target.classList.toggle("animate", entry.isIntersecting);
     entry.target.classList.toggle("in-view", entry.isIntersecting);
+    entry.target.classList.toggle("active", entry.isIntersecting);
+
   });
 }, {
-  threshold: 0.5,
+  threshold: 0.1,
   rootMargin: "0px 0px -50px 0px"
 });
 
@@ -28,6 +32,7 @@ const observer = new IntersectionObserver((entries) => {
 elementsToObserve.forEach(el => {
   if (el) observer.observe(el); // avoids null errors
 });
+
 
 // --------------------
 // FORM HANDLING
@@ -47,6 +52,12 @@ const msg_observer = new IntersectionObserver((entries) => {
 messages.forEach(msg => {
   if (msg) msg_observer.observe(msg); // avoids null errors
 });
+
+
+
+
+
+
 
 
 

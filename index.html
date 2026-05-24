@@ -161,42 +161,54 @@
 
         <section id="Skills" class="Skills">
 
-            <div class="skill-group" id="front-end-card">
-                <div class="skill-header">
-                    <img class="social-icon" src="images/icons8-front-end-64.png" alt="front-end">
-                    <h3>Frontend</h3> 
+            <div class="skill-wrapper">
+                <div class="skill-group" id="front-end-card">
+                    <div class="skill-header">
+                        <img class="social-icon" src="images/icons8-front-end-64.png" alt="front-end">
+                        <h3>Frontend</h3> 
+                    </div>
+                    <div class="textbox">
+                        <p>Figma HTML</p>
+                        <p>CSS JavaScript</p>
+                    </div>
+
                 </div>
+                <div class="skill-shadow"></div>
 
-                    <p>Figma
-                       HTML 
-                    </p>
-
-                    <p>
-                    CSS 
-                    JavaScript
-                    </p>
             </div>
 
-            <div class="skill-group" id="back-end-card">
-                <div class="skill-header">
-                    <i class="fa-jelly fa-regular fa-database"></i>
-                    <h3>Backend</h3> 
+            <div class="skill-wrapper">
+                <div class="skill-group" id="back-end-card">
+                    <div class="skill-header">
+                        <i class="fa-jelly fa-regular fa-database"></i>
+                        <h3>Backend</h3> 
+                    </div>
+                        <div class="textbox">
+                            <p>PostgresSQL mySQL</p> 
+                            <p>SQL database management </p>
+                            <p>RESTful endpoints </p>
+                        </div>
                 </div>
-
-                    <p>PostgresSQL mySQL</p> 
-                    <p>SQL database management </p>
-                    <p>RESTful endpoints </p>
+                <div class="skill-shadow"></div>
             </div>
 
-            <div class="skill-group" id="dev-ops-card">
-                <div class="skill-header">
-                    <img class="social-icon" src="images/icons8-devops-50.png" alt="devops-icon">
-                    <h3>DevOps Tools</h3> 
-                </div>
 
-                    <p>Git Github Version Control </p>
-                    <p>Azure DevOps</p>
-            </div> 
+            <div class="skill-wrapper">
+                <div class="skill-group" id="dev-ops-card">
+                    <div class="skill-header">
+                        <img class="social-icon" src="images/icons8-devops-50.png" alt="devops-icon">
+                        <h3>DevOps Tools</h3> 
+                    </div>
+                    <div class="textbox">
+                        <p>Git Github Version Control </p>
+                        <p>Azure DevOps</p>
+                    </div>
+
+                </div> 
+                <div class="skill-shadow"></div>
+            </div>
+
+
                 
         </section> 
 
@@ -216,17 +228,14 @@
                         <h2>Let's get in touch</h2>
                         <hr>
                     </div>
-                    <input type="text" name="name" placeholder="Your name" class="contact-inputs" required data-fs-field>
-                    <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required data-fs-field>
+                    <input  type="text" name="name" placeholder="Your name" class="contact-inputs" required data-fs-field>
+                    <input  type="email" name="email" placeholder="Your Email" class="contact-inputs" required data-fs-field>
                     <span data-fs-error="email"></span>
                     <textarea name="message" placeholder="Your Message" class="contact-inputs" data-fs-field></textarea>
                     <span data-fs-error="message"></span>
                     <button type="submit" class="email-submit" data-fs-submit-btn> Send </button>
                 </form> 
 
-                <!---THE RESPONSE SECTION-->
-                <div data-fs-success> Message Received! </div>
-                <div data-fs-error>Oops! There was a problem submitting your form.</div>
             </div>
 
 

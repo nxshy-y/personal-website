@@ -105,7 +105,19 @@
 
             }
 
+            .test{
+                background-color: rgb(238, 238, 206);
+                width: 30px;
+                height: 30px;
 
+                transform: translateX(0);
+                transition: transform 0.3s ease;
+
+                &.active {
+                    transform: translateX(30px);
+                }
+
+            }
 
 
 
@@ -132,6 +144,9 @@
             
     </nav>
 
+    <div class="test">
+        <p > this is a test for transition</p>
+    </div>
     <script src="function/test.js"></script>
     </body>
 </html>

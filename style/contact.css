@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .succes-card {
@@ -20,6 +21,15 @@
     padding: 50px;
     padding-bottom: 40px;
     border-radius: 15px;
+
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: transform 1s ease ,opacity 1s ease;
+
+    &.active {
+        transform: translateY(0px);
+        opacity: 1;
+    } 
 }
 
 .contact-left-title  {
@@ -48,6 +58,14 @@
     padding-top:20px;
     padding-bottom:20px;
     border-radius: 10px;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: transform 1s 1s ease ,opacity 1s 1s ease;
+
+    &.active {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 .email-submit {
@@ -65,6 +83,7 @@
     height: 140px;
     padding-top: 15px;
     border-radius: 20px;
+
 }
 
 .contact-inputs:focus{
