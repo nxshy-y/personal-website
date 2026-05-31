@@ -1,76 +1,143 @@
 // --------------------
-// SELECTORS
+// ELEMENTS
 // --------------------
-const elementsToObserve = [
+
+const animatedElements = [
   ...document.querySelectorAll(".contact-inputs"),
+  ...document.querySelectorAll(".skill-shadow"),
+  ...document.querySelectorAll(".Biography"),
+
   document.querySelector(".timeline"),
   document.querySelector(".Intro"),
-  document.querySelector("#name"),
-  document.querySelector("#my-form"),
-  document.querySelector("#degree"),
   document.querySelector(".title"),
-  ...document.querySelectorAll(".skill-shadow"),
-  ...document.querySelectorAll(".Biography")
+
+  document.querySelector("#name"),
+  document.querySelector("#degree"),
+  document.querySelector("#my-form")
 ];
 
-// --------------------
-// INTERSECTION OBSERVER
-// --------------------
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    entry.target.classList.toggle("animate", entry.isIntersecting);
-    entry.target.classList.toggle("in-view", entry.isIntersecting);
-    entry.target.classList.toggle("active", entry.isIntersecting);
+const sections = document.querySelectorAll("section");
 
-  });
-}, {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px"
-});
-
-// Observe everything
-elementsToObserve.forEach(el => {
-  if (el) observer.observe(el); // avoids null errors
-});
-
-
-// --------------------
-// FORM HANDLING
-// --------------------
+const pageName = document.querySelector("#page-name");
 
 const messages = [
   document.querySelector("[data-fs-success]"),
   document.querySelector("[data-fs-error]")
 ];
 
-const msg_observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+
+// --------------------
+// ANIMATION OBSERVER
+// --------------------
+
+const animationObserver = new IntersectionObserver((entries) => {
+
+  entries.forEach((entry) => {
+
+    entry.target.classList.toggle("animate", entry.isIntersecting);
+    entry.target.classList.toggle("in-view", entry.isIntersecting);
+    entry.target.classList.toggle("active", entry.isIntersecting);
+
+  });
+
+}, {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+});
+
+
+// Observe animated elements
+animatedElements.forEach((element) => {
+
+  if (element) {
+    animationObserver.observe(element);
+  }
+
+});
+
+
+// --------------------
+// PAGE NAME OBSERVER
+// --------------------
+
+const pageObserver = new IntersectionObserver((entries) => {
+
+  entries.forEach((entry) => {
+
+    if (entry.isIntersecting) {
+
+      pageName.textContent = entry.target.dataset.name;
+
+    }
+
+  });
+
+}, {
+  threshold: 0.5
+});
+
+
+// Observe sections
+sections.forEach((section) => {
+
+  pageObserver.observe(section);
+
+});
+
+
+// --------------------
+// FORM MESSAGE OBSERVER
+// --------------------
+
+const messageObserver = new IntersectionObserver((entries) => {
+
+  entries.forEach((entry) => {
+
     entry.target.classList.toggle("remove", entry.isIntersecting);
-  })
+
+  });
+
 });
 
-messages.forEach(msg => {
-  if (msg) msg_observer.observe(msg); // avoids null errors
+
+// Observe form messages
+messages.forEach((message) => {
+
+  if (message) {
+    messageObserver.observe(message);
+  }
+
+});
+
+// --------------------
+// FORM MESSAGE OBSERVER
+// --------------------
+
+const aboutSection = document.querySelector("#About-me");
+const introSection = document.querySelector("#Intro");
+
+const navbar = document.querySelector(".navbar");
+
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+            navbar.classList.add("active");
+
+        } 
+        if (entry.target.classList.contains("Intro") && entry.isIntersecting) {
+          navbar.classList.remove("active");
+        }
+
+    });
+
+}, {
+    threshold: 0.5
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+observer.observe(aboutSection);
+observer.observe(introSection);

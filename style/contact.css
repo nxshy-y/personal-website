@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 15px;
-    background-color: rgb(228, 228, 118);
+    background-color: #ffafb8;
     padding: 50px;
     padding-bottom: 40px;
     border-radius: 15px;
@@ -29,24 +29,40 @@
     &.active {
         transform: translateY(0px);
         opacity: 1;
+
+        & h2 {
+            opacity: 1;
+            transform: translateY(0px);    
+        }
+
+        & hr {
+            transform: scale(1);
+        }
     } 
 }
 
 .contact-left-title  {
     font-size: 30px;
-   margin-bottom:25px;
+    margin-bottom:25px;
+
 }
 
 .contact-left-title h2{
-    -webkit-text-stroke: 1px black;
-    color:rgb(148, 39, 39);
+    -webkit-text-stroke: 1.5px black;
+    color:#f36767;
     font-family: 'Raleway', sans-serif;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: transform 1s ease ,opacity 1s ease;
+
 }
 
 .contact-left-title hr {
     background-color: black;
     border-color: rgb(148, 39, 39);
     height: 5px;
+    transform: scale(0);
+    transition: transform 1.5s ease;
 }
 
 .contact-inputs {
@@ -60,7 +76,7 @@
     border-radius: 10px;
     opacity: 0;
     transform: translateX(-30px);
-    transition: transform 1s 1s ease ,opacity 1s 1s ease;
+    transition: transform 1s ease ,opacity 1s ease;
 
     &.active {
         opacity: 1;
@@ -70,13 +86,13 @@
 
 .email-submit {
     background-color: beige;
+    box-shadow: 0px 0px 5px 3px #f36767;
+    border: none;
     width:100px;
     height: 30px;
-    border: none;
     border-radius: 20px;
     margin-top:10px;
     cursor: pointer;
-
 }
 
 #my-form textarea {

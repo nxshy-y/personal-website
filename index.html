@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="style/bio.css">  
     <link rel="stylesheet" href="style/contact.css">
     <link rel="stylesheet" href="style/navbar.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">  
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sekuya&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sekuya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sekuya&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a3e45130db.js" crossorigin="anonymous"></script>
 
 </head>
@@ -23,7 +21,8 @@
     
     <nav class="navbar">
 
-        <div class="menu"> <i class="fa-solid fa-bars"></i>
+        <div class="menu"> 
+            <i class="fa-solid fa-bars"></i>
             <ul class="nav_page"> 
                 <li class="nav-text"><a href="#Intro">Intro</a></li>
                 <li class="nav-text"  ><a href="#About-me">About me</a></li>
@@ -32,6 +31,24 @@
                 <li class="nav-text" ><a href="#Contact">Contacts</a></li>
             </ul>
         </div>
+        <div class="menu-names">
+            <h1 id="page-name">Biography</h1>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.drive.google.com/file/d/1XUvqA8H2BCOJz4DQJAIPnJyaTYIq0Fmx/view?usp=sharing">
+            <img class="Info" src="images/document.png" alt="View Resume">
+            </a>
+
+            <a href="https://www.github.com/nxshy-y">
+            <img class="Info" src="images/github.png" > 
+            </a>
+            
+            <a href="https://www.linkedin.com/in/nasheeta-yeamin-2024b921b">
+            <img class="Info" src="images/linkedin.png" alt="linkedin" >
+            </a>
+        </div>
+
+
             
     </nav>
 
@@ -61,7 +78,7 @@
         </div>
         </section>
 
-        <section id="About-me" class="About-me">
+        <section id="About-me" data-name="Biography" class="About-me">
         
             <div class="Biography">
                 <h3>About me</h3>
@@ -83,10 +100,8 @@
 
         </section> 
 
-       <section id="projects" class="projects"> 
-            <div class="title">
-                <h1> Projects & Experience</h1>
-            </div>
+       <section id="projects" data-name="Projects" class="projects"> 
+
             <div class="timeline">       
                     
                         <div class="project up" >
@@ -94,12 +109,19 @@
                             <div class="card " style="animation-delay:1s;">
                                 <h3>Unisource</h3>
 
-                                <div class="unisource-slide">
-                                    <!-- <img class="image" src="images/course_diagram.png"> -->
+                                <div class="slide">
+                                    <div class="show" style="animation:none;">
+                                        <img style="object-fit: fill; height:140px;"class="image" src="images/course_diagram.png">
+                                    </div>
                                 </div>
 
                                 <div class="middle">
-                                    <p>TESTING</p>
+                                        <p class="text"> Unisource is a platform that consistently updates accurate and relevant information to Lehigh websites. 
+                                        This required parsing large excel datasheets by semester and to develop and test RESTful API endpoints that handled user requests.  
+                                        </p>       
+                                    <div class="tags">
+                                        <p>HTML</p> <p>SQL</p> <p>Python</p>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -123,7 +145,11 @@
                                     </div>
                                     
                                     <div class="middle">
-                                        <p>TESTING</p>
+                                        <p class="text" >My contributions focused on implementing and testing backend API endpoints, including POST and GET operations, validating incoming request data, and ensuring reliable handling of large datasets across the system. </p>
+                                        
+                                            <div class="tags">
+                                            <p>Python</p> <p>SQL</p> <p>RESTful APIs</p> <p>postgres</p>
+                                            </div>
                                     </div>                                    
                             </div> 
 
@@ -139,12 +165,14 @@
                                     <div class="slide">
                                         <div class="show">
                                                 <img class="image" src="images/homework_dojo.png">
-                                                <img class="image" src="images/class_session.png">
+                                                <img style="object-fit: fill; height:140px;" class="image" src="images/class_session.png">
+                                                <img class="image" src="images/code.org.png">
                                         </div>
                                     </div>
                                     
                                     <div class="middle">
-                                        <p>TESTING</p>
+                                        <p class="text">
+                                        </p>
                                     </div>
                             </div>
                             
@@ -159,7 +187,7 @@
 
 
 
-        <section id="Skills" class="Skills">
+        <section id="Skills" data-name="Skills" class="Skills">
 
             <div class="skill-wrapper">
                 <div class="skill-group" id="front-end-card">
@@ -167,10 +195,7 @@
                         <img class="social-icon" src="images/icons8-front-end-64.png" alt="front-end">
                         <h3>Frontend</h3> 
                     </div>
-                    <div class="textbox">
-                        <p>Figma HTML</p>
-                        <p>CSS JavaScript</p>
-                    </div>
+                        <p>Figma, HTML, CSS and JavaScript</p>
 
                 </div>
                 <div class="skill-shadow"></div>
@@ -180,14 +205,10 @@
             <div class="skill-wrapper">
                 <div class="skill-group" id="back-end-card">
                     <div class="skill-header">
-                        <i class="fa-jelly fa-regular fa-database"></i>
+                        <i class="fa-solid fa-database" style="color: rgb(116, 192, 252);"></i>
                         <h3>Backend</h3> 
                     </div>
-                        <div class="textbox">
-                            <p>PostgresSQL mySQL</p> 
-                            <p>SQL database management </p>
-                            <p>RESTful endpoints </p>
-                        </div>
+                        <p>PostgreSQL, MySQL, SQL, RESTful APIs and database management</p>
                 </div>
                 <div class="skill-shadow"></div>
             </div>
@@ -199,11 +220,8 @@
                         <img class="social-icon" src="images/icons8-devops-50.png" alt="devops-icon">
                         <h3>DevOps Tools</h3> 
                     </div>
-                    <div class="textbox">
-                        <p>Git Github Version Control </p>
-                        <p>Azure DevOps</p>
-                    </div>
-
+                        <p>Git, GitHub, Docker, CI/CD pipelines and Agile Methodologies</p>
+                        
                 </div> 
                 <div class="skill-shadow"></div>
             </div>
@@ -212,7 +230,7 @@
                 
         </section> 
 
-        <section id="Contact" class="Contact-Form">
+        <section id="Contact" data-name="Contact" class="Contact-Form">
             
            
             <div class="contact-section" >
@@ -228,10 +246,10 @@
                         <h2>Let's get in touch</h2>
                         <hr>
                     </div>
-                    <input  type="text" name="name" placeholder="Your name" class="contact-inputs" required data-fs-field>
-                    <input  type="email" name="email" placeholder="Your Email" class="contact-inputs" required data-fs-field>
+                    <input  style="transition-delay: 1s;" type="text" name="name" placeholder="Your name" class="contact-inputs" required data-fs-field>
+                    <input  style="transition-delay: 1.5s;" type="email" name="email" placeholder="Your Email" class="contact-inputs" required data-fs-field>
                     <span data-fs-error="email"></span>
-                    <textarea name="message" placeholder="Your Message" class="contact-inputs" data-fs-field></textarea>
+                    <textarea style="transition-delay: 2s;" name="message" placeholder="Your Message" class="contact-inputs" data-fs-field></textarea>
                     <span data-fs-error="message"></span>
                     <button type="submit" class="email-submit" data-fs-submit-btn> Send </button>
                 </form> 

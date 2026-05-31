@@ -2,16 +2,15 @@
     width: 350px;
     height: 150px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.441);
     border: none;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     font-size: 16px;
-    text-align: center;
     padding: 40px;  
     min-width: 50px;
-    background-color: #EDF2F4;
+    background-color: #ffafb8;
     top: 0rem;
     position: relative;
     transition: top 0.3s ease;
@@ -42,7 +41,7 @@
     gap: 20px;
     width: 350px;
     height: 150px;
-    background-color: rgb(120, 7, 7);
+    background-color: #887a7a;
     z-index: -1;
     transform: translate(0rem, -9.35rem);
     transition:transform 1s ease;
@@ -59,32 +58,27 @@
   font-size: 20px; 
   margin-left: 0px; 
   display:inline-block;
+  transform: translateY(0.3rem);
+  font-style: bold;
+  margin-left:15px;
   transition: color 0.5s ease, -webkit-text-stroke 0.5s ease;
 } 
-
-.skill-group p {
-    min-width:40px;
-    font-family: 'Manrope', sans-serif;
-    word-break: break-all;
-    min-width: 150px;
-    text-align: center;
-    line-height: 25px;
-    
-
-}
 
 .skill-header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 10px; 
+    background-color: white;
+    border-radius: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transform: translateY(-1.5rem) translateX(-0.5rem);
+    border: 2px solid #f36767;
+
 }
 
-.textbox{
-    display: flex;
-    flex-direction: row;
-    row-gap: 20px;
-}
+
+
 
 .Skills{
     display: flex;
@@ -93,8 +87,15 @@
     align-items: center;
     position: relative;
     left: 180px;
+    
+    & p {
+        font-size: 0.9rem;
+        font-family: "Montserrat Alternates", sans-serif;
+        line-height: 1.5;
+        font-weight: 600;
+        
 
-
+    }
 }
 
 
@@ -105,5 +106,9 @@
     height:30px; 
     margin-right: 10px;
 }
+
+
+
+
 
 /*Use @media to put the rest in column form*/
