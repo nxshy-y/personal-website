@@ -26,14 +26,11 @@
 }
 
 .Professional-Network img{
-    transition:filter 0.01s ease, border-image 0.01s ease;
+    transition:filter 0.01s ease;
 
     &:hover{
         filter: invert(67%) sepia(30%) saturate(6239%) hue-rotate(319deg) brightness(97%) contrast(98%);
     } 
-
-
-
 }
 
 #name {

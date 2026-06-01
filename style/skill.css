@@ -28,8 +28,8 @@
     }
 
     &:hover h3 {
-            color:#EF233C;
-            -webkit-text-stroke: 0.3px #2b2d42;
+            color:#556b2fbe;
+            -webkit-text-stroke: 0.5px #2b2d42;
 
     }
 

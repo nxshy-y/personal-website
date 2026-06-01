@@ -100,7 +100,7 @@
   opacity: 0;
   transform: translate(1rem, 1rem);
   text-align: left; 
-
+  transition: opacity 0.5s 0.2s ease-out;
   & p{
     font-size: 1rem;
   }
@@ -299,5 +299,6 @@
 }
 
 .card:hover .middle {
+  
   opacity: 1;
 }
