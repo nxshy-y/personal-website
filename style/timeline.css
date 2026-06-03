@@ -301,11 +301,19 @@
 
 @media (max-width: 500px) {
 
+    .timeline.in-view .circle,
+    .timeline.in-view .card,
+    .timeline.in-view .show {
+        animation: none;
+        transform: none;
+    }
+
     .timeline{
         height: auto;
         flex-direction: column;
         align-items: flex-start;
         row-gap: 10px;
+        padding: 5rem 0 5rem 0;
         &::after {
             content: none;
         }
@@ -317,13 +325,16 @@
 
     .card {
         visibility: visible;
+        margin-bottom: 1rem;
         &:hover {
             width: clamp(300px, 80vw, 500px);
             height: clamp(220px, 50vh, 300px);
         }
     }
 
-    .up,.down {
+    .up,
+    .down,
+    .project {
         transform: translateY(0);
     }
 

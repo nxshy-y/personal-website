@@ -142,3 +142,9 @@
   transform: translateY(-10px);
   transition: opacity 0.5s 2s ease, transform 0.5s 2s ease;
 }
+
+@media (max-width: 500px) {
+    .contact-form {
+        margin-top: 5rem;
+    }
+}

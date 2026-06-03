@@ -121,6 +121,7 @@
 
 @media (max-width: 600px) {
     .Skills {
+
         height: auto;
         flex-direction: row;
         flex-wrap: wrap;
@@ -136,6 +137,12 @@
     .skill-wrapper {
         flex: 1 1 280px;
         max-width: 350px;
+    }
+}
+
+@media (max-width: 500px){
+    .Skills {
+        padding-bottom: 5 rem;
     }
 }
 

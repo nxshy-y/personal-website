@@ -35,9 +35,13 @@ const animationObserver = new IntersectionObserver((entries) => {
 
   entries.forEach((entry) => {
 
-    entry.target.classList.toggle("animate", entry.isIntersecting);
-    entry.target.classList.toggle("in-view", entry.isIntersecting);
-    entry.target.classList.toggle("active", entry.isIntersecting);
+    if (!entry.isIntersecting) return;
+
+    entry.target.classList.add("animate", "in-view", "active");
+
+    if (entry.target.classList.contains("timeline")) {
+      animationObserver.unobserve(entry.target);
+    }
 
   });
 
