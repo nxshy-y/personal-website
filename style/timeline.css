@@ -34,7 +34,7 @@
     border: none;
     padding: 20px;
     text-align: left;
-    opacity: 0;
+    visibility:hidden;
     margin-left: 20px; 
     transition: width 1s ease;
 
@@ -166,9 +166,8 @@
 /*---------------SLIDE - SHOW ANIMATION ------------------------------------------*/
 /**/
 .timeline.in-view .circle {
-    animation: popup 1s forwards;
-    animation-timing-function: ease-out (0, 0, 0.58, 1.0);
-    
+    animation: popup 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: 0.05s;
 }
 
 /* .timeline.in-view .project {
@@ -186,7 +185,8 @@
 
 
 .timeline.in-view .card {
-    animation: fadeup 3s forwards; 
+    animation: fadeup 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    animation-delay: 0.18s;
 }
 
 .timeline.in-view .show {
@@ -251,19 +251,18 @@
 }
 
 @keyframes popup {
-
     from {
         opacity: 0;
-        transform: scale(0.1);
+        transform: scale(0.35) translateY(4px);
     }
-    to{
+    to {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1) translateY(0);
     }
-} 
+}
 
 .timeline.animate::after{
-    animation: moveline 4s linear forwards;  
+    animation: moveline 3.8s linear forwards;  
 }
 
 @keyframes moveline {
@@ -283,12 +282,14 @@
 
 
 @keyframes fadeup {
-    from{
+    from {
         opacity: 0;
-        transform: translateY(10px) scale(0.5);
+        visibility: hidden;
+        transform: translateY(10px) scale(0.92);
     }
-    to{
-        opacity: 1; 
+    to {
+        opacity: 1;
+        visibility: visible;
         transform: translateY(0) scale(1);
     }
 }
@@ -296,5 +297,45 @@
 
 .card:hover .image {
   opacity: 0;
+}
+
+@media (max-width: 500px) {
+
+    .timeline{
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 10px;
+        &::after {
+            content: none;
+        }
+    }
+
+    .circle{
+        visibility: hidden;
+    }
+
+    .card {
+        visibility: visible;
+        &:hover {
+            width: clamp(300px, 80vw, 500px);
+            height: clamp(220px, 50vh, 300px);
+        }
+    }
+
+    .up,.down {
+        transform: translateY(0);
+    }
+
+    .middle{
+        & p {
+            font-size: clamp(0.9rem, 2vw, 1.2rem);
+        }
+    }
+
+    .text {
+        width: clamp(300px, 80vw, 500px);
+        height: clamp(220px, 50vh, 300px);
+    }
 }
 

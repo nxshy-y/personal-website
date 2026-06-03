@@ -119,8 +119,9 @@
 
 
 
-@media (max-width: 980px) {
+@media (max-width: 600px) {
     .Skills {
+        height: auto;
         flex-direction: row;
         flex-wrap: wrap;
         align-content: center;
