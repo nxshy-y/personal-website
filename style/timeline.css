@@ -295,6 +295,8 @@
 }
 
 
+
+
 .card:hover .image {
   opacity: 0;
 }
@@ -326,6 +328,10 @@
     .card {
         visibility: visible;
         margin-bottom: 1rem;
+        width: min(100%, 290px);
+        height: auto;
+        min-height: 220px;
+        padding: 16px;
         &:hover {
             width: clamp(300px, 80vw, 500px);
             height: clamp(220px, 50vh, 300px);
