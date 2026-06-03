@@ -200,7 +200,7 @@
     animation: fade-in 1.5s ease-out forwards;
 }
 
-.title.animate::after {
+.title.one-time::after {
         animation: grow 1.5s linear forwards
     
 }
@@ -261,7 +261,7 @@
     }
 }
 
-.timeline.animate::after{
+.timeline.one-time::after{
     animation: moveline 3.8s linear forwards;  
 }
 

@@ -3,18 +3,24 @@
 // --------------------
 
 const animatedElements = [
-  ...document.querySelectorAll(".contact-inputs"),
   ...document.querySelectorAll(".skill-shadow"),
   ...document.querySelectorAll(".Biography"),
 
-  document.querySelector(".timeline"),
   document.querySelector(".Intro"),
   document.querySelector(".title"),
-  document.querySelector(".email-submit"),
+
 
   document.querySelector("#name"),
   document.querySelector("#degree"),
-  document.querySelector("#my-form")
+
+  
+];
+
+const oneTimeElements = [
+  ...document.querySelectorAll(".contact-inputs"),
+  document.querySelector(".email-submit"),
+  document.querySelector("#my-form"),
+  document.querySelector(".timeline")
 ];
 
 const sections = document.querySelectorAll("section");
@@ -33,23 +39,31 @@ const messages = [
 
 const animationObserver = new IntersectionObserver((entries) => {
 
+  entries.forEach((entry) => { 
+
+    entry.target.classList.toggle("animate", entry.isIntersecting);
+  }); 
+}, {
+  threshold: 0.5
+});
+
+const oneTimeObserver = new IntersectionObserver((entries) => {
+
   entries.forEach((entry) => {
-
-    if (!entry.isIntersecting) return;
-
-    entry.target.classList.add("animate", "in-view", "active");
-
-    if (entry.target.classList.contains("timeline")) {
-      animationObserver.unobserve(entry.target);
-    }
-
+    entry.target.classList.add("one-time","in-view", entry.isIntersecting);
   });
 
 }, {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px"
+  threshold: 0.5
 });
 
+//for animations that need to happen once 
+oneTimeElements.forEach((element) => {
+
+  if (element) {
+    oneTimeObserver.unobserve(element);
+  }
+});
 
 // Observe animated elements
 animatedElements.forEach((element) => {

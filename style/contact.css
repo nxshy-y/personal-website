@@ -28,7 +28,7 @@
     transform: translateY(-100px);
     transition: transform 1s ease ,opacity 1s ease;
 
-    &.active {
+    &.one-time {
         transform: translateY(0px);
         opacity: 1;
 
@@ -83,7 +83,7 @@
     transform: translateX(-30px);
     transition: transform 1s ease ,opacity 1s ease;
 
-    &.active {
+    &.one-time {
         opacity: 1;
         transform: translateX(0px);
     }
@@ -100,7 +100,7 @@
     transform:scale(0);
     transition: transform 0.2s ease;
 
-    &.animate {
+    &.one-time {
         transform: scale(1);
     }
 
