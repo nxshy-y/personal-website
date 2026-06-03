@@ -50,7 +50,13 @@ const animationObserver = new IntersectionObserver((entries) => {
 const oneTimeObserver = new IntersectionObserver((entries) => {
 
   entries.forEach((entry) => {
-    entry.target.classList.add("one-time","in-view", entry.isIntersecting);
+
+    if (!entry.isIntersecting) return;
+
+    entry.target.classList.add("one-time", "in-view");
+
+    oneTimeObserver.unobserve(entry.target);
+
   });
 
 }, {
@@ -61,7 +67,7 @@ const oneTimeObserver = new IntersectionObserver((entries) => {
 oneTimeElements.forEach((element) => {
 
   if (element) {
-    oneTimeObserver.unobserve(element);
+    oneTimeObserver.observe(element);
   }
 });
 
