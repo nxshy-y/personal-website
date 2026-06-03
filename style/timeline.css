@@ -18,7 +18,7 @@
     width: 100%;
     height: 0.3rem;
     border-radius: 10px;
-    background: #887a7a; 
+    background: #c3a6cb; 
     z-index: -1;
     top: 75%;
 } 
@@ -32,7 +32,6 @@
     box-shadow: 0 5px 12px #f36767;
     transition: transform 0.2s;
     border: none;
-    cursor: pointer;
     padding: 20px;
     text-align: left;
     opacity: 0;
@@ -45,11 +44,13 @@
         & .slide {
             opacity: 0;
         }
+
+        & .middle {
+            opacity: 1;
+            transition:opacity 0.5s 0.25s ease-out;
+        }
     }
-
-    
-
-    
+ 
 }
 
 .down {
@@ -89,7 +90,7 @@
   height: 25px;
   right: 50%;
   background-color: #ffafb8;
-  border: 4px solid #887a7a;
+  border: 4px solid #c3a6cb;
   border-radius: 50%;
   opacity: 0;
   /* transform: scale(0.1); */
@@ -100,12 +101,10 @@
   opacity: 0;
   transform: translate(1rem, 1rem);
   text-align: left; 
-  transition: opacity 0.5s 0.2s ease-out;
+  transition: opacity 0.1s ease-out;
   & p{
     font-size: 1rem;
-  }
-  
-  
+  }  
 }
 
 .tags {
@@ -117,13 +116,14 @@
     height: 7rem;
 
     & p {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         color:#feb0b8;
         background-color: #556b2fbe;
         padding: 5px 15px;
         border-radius: 8px;
         border: 3px solid #f75454;
         box-shadow: 0 3px 6px #f36767;
+       
     }    
 }
 
@@ -298,7 +298,3 @@
   opacity: 0;
 }
 
-.card:hover .middle {
-  
-  opacity: 1;
-}

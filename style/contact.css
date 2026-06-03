@@ -3,25 +3,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    width: 100%;
+    padding: 0 1rem;
 }
 
-.succes-card {
-  padding: 20px; 
-  height: 50px; 
-  width: 100px;
-  background-color: white;
+.contact-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #my-form {
     display: flex;
     flex-direction: column;
     row-gap: 15px;
-    background-color: #ffafb8;
-    padding: 50px;
+    width: min(100%, 460px);
+    box-sizing: border-box;
+    background-color: #c3a6cb;
+    padding: clamp(24px, 5vw, 50px);
     padding-bottom: 40px;
     border-radius: 15px;
-
+    border: 8px solid #feb0b8;
     opacity: 0;
     transform: translateY(-100px);
     transition: transform 1s ease ,opacity 1s ease;
@@ -48,8 +50,8 @@
 }
 
 .contact-left-title h2{
-    -webkit-text-stroke: 1.5px black;
-    color:#f36767;
+    -webkit-text-stroke: 1.5px #f75454;
+    color:#feb0b8;
     font-family: 'Raleway', sans-serif;
     opacity: 0;
     transform: translateY(-30px);
@@ -58,19 +60,21 @@
 }
 
 .contact-left-title hr {
-    background-color: black;
-    border-color: rgb(148, 39, 39);
+    background-color: #556b2fbe;
     height: 5px;
+    border:none;
+    border-radius: 10px;
     transform: scale(0);
     transition: transform 1.5s ease;
 }
 
 .contact-inputs {
     height: 30px;
-    width: 350px;
-    border:none;
-    outline:none;
-    padding-left: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
     padding-top:20px;
     padding-bottom:20px;
     border-radius: 10px;
@@ -85,18 +89,33 @@
 }
 
 .email-submit {
-    background-color: beige;
-    box-shadow: 0px 0px 5px 3px #f36767;
+    background-color: #556b2fbe;
     border: none;
-    width:100px;
+    width: min(100%, 100px);
     height: 30px;
     border-radius: 20px;
     margin-top:10px;
     cursor: pointer;
+    transform:scale(0);
+    transition: transform 0.2s ease;
+
+    &.animate {
+        transform: scale(1);
+    }
+
+    & p {
+        font-size: 1rem;
+        color: #ffafb8;
+        font-weight: bold;
+        font-family: 'Raleway', sans-serif;
+    }
 }
 
 #my-form textarea {
     height: 140px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     padding-top: 15px;
     border-radius: 20px;
 

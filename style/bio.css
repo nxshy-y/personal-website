@@ -5,37 +5,53 @@
     justify-content: center;
     align-items: center;
     border-radius: 25px;
-    width: 600px;        
-    text-align: center;        
-    font-size: 18px;
-    height: 84%;
+    width: clamp(18rem, 92vw, 36rem);
+    max-width: 36rem;
+    min-height: 20rem;
+    height: auto;
+    text-align: center;
+    font-size: clamp(1rem, 1vw + 0.85rem, 1.1rem);
     line-height: 1.6;
     position: relative;
-    padding: 60px 60px 60px 20px; /* if you want extra right padding */
-    margin-right: 9%;
-    margin-bottom: 12%;
-    margin-top: 4%;
-    left:-1%;
-    background-color:  #ffafb8;
-       
+    padding: clamp(1rem, 3vw, 2rem);
+    margin: 4% 9% 12% 0;
+    left: 0;
+    box-sizing: border-box;
+    container-type: inline-size;
+    background-color: #ffafb8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.441);
 }
+
 
 .About-me {
     display: flex;
     justify-content: flex-end;
-    height: 800px;
-    position: relative;
-    
+    align-items: center; 
+    width: 100%;
 
+    position: relative;
+    box-sizing: border-box;
+    container-type: inline-size;
 } 
 
 
 .Biography h3 {
     font-family: 'Raleway', sans-serif;
-    font-size: 2rem;
-    display:inline-block;
+    display: inline-block;
     color: #f36767;
     -webkit-text-stroke: 2px black;
+    position: relative;
+    font-size: clamp(1.5rem, 2vw + 1.1rem, 2.2rem);
+
+    &::after {
+        content: " ";
+        position: absolute; 
+        width: 45%;
+        background-color: black;
+        display: inline-block;
+        height: 3px;
+        transform: scale(0);
+    }
 } 
 
 
@@ -45,17 +61,19 @@
     font-family: 'Manrope', sans-serif;
     font-weight: 500;
     text-align: left;
+    font-size: clamp(0.5rem, 1vw + 0.85rem, 1.1rem);
+    max-width: 36rem;
 }
 
 .Biography::before {
     content: " ";
     position: absolute;
-    background-color: #887a7a;
+    background-color: #c3a6cb;
     border-radius: 25px;
-    width: 600px;
+    width: 100%;
+    max-width: 36rem;
     height: 100%;
-    left: 3%;
-    bottom: 4%;
+    inset: 0;
     z-index: -1;
     transform: translateX(0%) translateY(0%);
     transition: transform 1s ease ;
@@ -65,18 +83,9 @@
     transform: translateX(6.6%) translateY(6.6%);
 }
 
-.Biography::after {
-    content: " ";
-    position: absolute; 
-    width: 45%;
-    background-color: black;
-    top: 10%;
-    height: 3px;
-    left: 25%;
-    transform: scale(0);
-}
 
-.Biography.animate::after{
+
+.Biography.animate h3::after{
     animation: growLine 1s linear forwards;
 }
 

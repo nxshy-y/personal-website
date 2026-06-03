@@ -10,6 +10,7 @@ const animatedElements = [
   document.querySelector(".timeline"),
   document.querySelector(".Intro"),
   document.querySelector(".title"),
+  document.querySelector(".email-submit"),
 
   document.querySelector("#name"),
   document.querySelector("#degree"),
@@ -141,3 +142,27 @@ const observer = new IntersectionObserver((entries) => {
 
 observer.observe(aboutSection);
 observer.observe(introSection);
+
+/* THIS IS FOR NAVBAR ANIMATION */ 
+
+const menu = document.querySelector(".menu");
+const menuIcon = document.querySelector(".fa-solid.fa-bars");
+const navPage = document.querySelector(".nav_page");
+const navText = document.querySelectorAll(".nav-text a");
+
+menuIcon.addEventListener('mouseenter', () => { 
+    navPage.style.opacity = '1';
+    navPage.style.height = '17vh';
+    navText.forEach((text) => {
+        text.style.pointerEvents = 'auto';
+    });
+});
+
+menu.addEventListener('mouseleave', () => {
+    navPage.style.opacity = '0';
+    navPage.style.height = '0vh';
+    navText.forEach((text) => {
+        text.style.pointerEvents = 'none';
+    });
+
+});

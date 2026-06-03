@@ -1,12 +1,11 @@
 .skill-group{ 
-    width: 350px;
-    height: 150px;
+    width: min(100%, 350px);
+    min-height: 150px;
+    height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.441);
     border: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display:inline-block;
     font-size: 16px;
     padding: 40px;  
     min-width: 50px;
@@ -21,6 +20,11 @@
 }
 
 .skill-wrapper{
+    position: relative;
+    width: min(100%, 350px);
+    display: flex;
+    justify-content: center;
+
     &:hover > .skill-group {
         top: -2rem; 
 
@@ -28,8 +32,8 @@
     }
 
     &:hover h3 {
-            color:#556b2fbe;
-            -webkit-text-stroke: 0.5px #2b2d42;
+            color:#f75454;
+            -webkit-text-stroke: 0.5px black;
 
     }
 
@@ -39,15 +43,15 @@
     position: absolute;
     border-radius: 12px;
     gap: 20px;
-    width: 350px;
-    height: 150px;
-    background-color: #887a7a;
+    inset: 0;
+    min-height: 150px;
+    background-color: #c3a6cb;
     z-index: -1;
-    transform: translate(0rem, -9.35rem);
+    transform: translate(0rem, 0rem);
     transition:transform 1s ease;
 
     &.animate {
-        transform: translate(2.5rem, -7rem);
+        transform: translate(2.5rem, 3rem);
         
     }
 
@@ -83,10 +87,14 @@
 .Skills{
     display: flex;
     flex-direction: row;
-    gap: 60px; 
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(20px, 4vw, 60px);
+    padding: 0 1rem;
     align-items: center;
     position: relative;
-    left: 180px;
+    left: 0;
+    margin: 0 auto;
     
     & p {
         font-size: 0.9rem;
@@ -108,6 +116,27 @@
 }
 
 
+
+
+
+@media (max-width: 980px) {
+    .Skills {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        row-gap: min(4rem,3rem);
+        justify-content:flex-start;
+
+        & .skill-shadow.animate {
+            transform: translate(2rem, 2rem);  
+        }
+    }
+
+    .skill-wrapper {
+        flex: 1 1 280px;
+        max-width: 350px;
+    }
+}
 
 
 

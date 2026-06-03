@@ -56,7 +56,6 @@ nav {
 
 .nav-text {
     font-weight: bold;
-    cursor: pointer;
     text-align: center;
     width: 20vh;
     transform: translateY(0rem);
@@ -98,9 +97,9 @@ nav {
     height: 2vh;
     line-height: 1.5rem;
     padding: 10px 0px 10px 0px;
+    transform: translateX(0rem);
     z-index: 5;
     top: 3.6rem;
-    margin-right: 10px;
     position:absolute;
     opacity: 0;
     transition: opacity 0.3s 0.2s ease, height 0.3s 0.2s ease;
@@ -114,6 +113,13 @@ i {
     transition: transform 0.3s ease;
     position: relative;
     font-size: 30px;
+
+    &:hover {
+        transform: rotate(90deg);
+        filter: invert(96%) sepia(93%) saturate(1567%) hue-rotate(287deg) brightness(101%) contrast(100%);
+    }
+
+
 }
 
 .menu {
@@ -123,17 +129,6 @@ i {
     align-items: center;
     justify-content: center;
     position: relative;
-
-    &:hover > i {
-        transform: rotate(90deg);
-        filter: invert(96%) sepia(93%) saturate(1567%) hue-rotate(287deg) brightness(101%) contrast(100%);
-
-    }
-
-    &:hover > .nav_page {
-        opacity: 1;
-        height: 20vh;
-    }
 
 }
 
@@ -150,3 +145,4 @@ i {
         font-size: 2rem;
     }
 }
+
