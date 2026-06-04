@@ -213,6 +213,7 @@ cards.forEach((card) => {
             // Optional chaining: only remove the class if the element exists.
             otherCard.querySelector(".slide")?.classList.remove("btn-active");
             otherCard.querySelector(".middle")?.classList.remove("btn-active");
+            otherCard.querySelector(".show")?.classList.remove("btn-active");
         });
 
         // Check whether this card is currently open.
@@ -220,13 +221,28 @@ cards.forEach((card) => {
 
         // Toggle the active state for the card and its inner sections.
         // If it was open, this closes it; if it was closed, this opens it.
-        console.log("clicked", card);
-        console.log("before", slide.classList.contains("btn-active"));
         
         card.classList.toggle("btn-active", !isActive);
         slide?.classList.toggle("btn-active", !isActive);
         middle?.classList.toggle("btn-active", !isActive);
+        show?.classList.toggle("btn-active", !isActive);
+        
+        const img = show?.querySelector("img");
 
-        console.log("after", slide.classList.contains("btn-active"));
+      if (img) {
+        
+        console.log("visibility:", styles.visibility);
+        console.log("opacity:", styles.opacity);
+        console.log("width:", styles.width);
+        console.log("height:", styles.height);
+
+        console.log("clientWidth:", img.clientWidth);
+        console.log("clientHeight:", img.clientHeight);
+
+        console.log("naturalWidth:", img.naturalWidth);
+        console.log("naturalHeight:", img.naturalHeight);
+      }
+
+        
     });
 });
