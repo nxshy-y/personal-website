@@ -196,21 +196,37 @@ menu.addEventListener('mouseleave', () => {
 
 const cards = document.querySelectorAll(".card-btn");
 
+// Add one click handler to every timeline card.
 cards.forEach((card) => {
     card.addEventListener("click", () => {
+        // Find the parts inside this card that should change visually.
         const slide = card.querySelector(".slide");
         const middle = card.querySelector(".middle");
+        const show = card.querySelector(".show");
 
+        // Close any other open card before opening this one.
         cards.forEach((otherCard) => {
+
+          if (otherCard === card) return; // Skip the clicked card.
+          
             otherCard.classList.remove("btn-active");
+            // Optional chaining: only remove the class if the element exists.
             otherCard.querySelector(".slide")?.classList.remove("btn-active");
             otherCard.querySelector(".middle")?.classList.remove("btn-active");
         });
 
+        // Check whether this card is currently open.
         const isActive = card.classList.contains("btn-active");
 
+        // Toggle the active state for the card and its inner sections.
+        // If it was open, this closes it; if it was closed, this opens it.
+        console.log("clicked", card);
+        console.log("before", slide.classList.contains("btn-active"));
+        
         card.classList.toggle("btn-active", !isActive);
         slide?.classList.toggle("btn-active", !isActive);
         middle?.classList.toggle("btn-active", !isActive);
+
+        console.log("after", slide.classList.contains("btn-active"));
     });
 });

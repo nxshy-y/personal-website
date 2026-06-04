@@ -49,6 +49,7 @@
 
             & .middle {
                 opacity: 1;
+                visibility: visible;
                 transition:opacity 0.5s 0.25s ease-out;
             }
         }
@@ -102,6 +103,7 @@
 .middle {
   transition: .5s ease;
   opacity: 0;
+  visibility: hidden;
   transform: translate(1rem, 1rem);
   text-align: left; 
   transition: opacity 0.1s ease-out;
@@ -306,9 +308,9 @@
 
 @media (max-width: 500px) {
 
-    .timeline.in-view .circle,
-    .timeline.in-view .card,
-    .timeline.in-view .show {
+
+    .timeline.in-view .card{
+
         animation: none;
         transform: none;
     }
@@ -335,13 +337,22 @@
         height: auto;
         min-height: 220px;
         padding: 16px;
-
+  
         &.btn-active {
             width: clamp(300px, 80vw, 500px);
             height: clamp(220px, 50vh, 300px);
+        }
 
+        h3 {
+            margin: 0 0 0.35rem;
+            font-size: 1.05rem;
+            line-height: 1.2;
+        }
 
-
+        p {
+            margin: 0;
+            line-height: 1.35;
+            font-size: 0.92rem;
         }
     }
 
@@ -351,9 +362,13 @@
 
     .middle.btn-active {
         opacity: 1;
-        transition:opacity 0.5s 0.25s ease-out;
+        transition: opacity 0.5s 0.25s ease-out;
+        display: flex;
+        visibility: visible;
+        flex-direction: column;
+        gap: 0.45rem;
+        padding-top: 0.2rem;
     }
-
 
     .up,
     .down,
@@ -361,15 +376,36 @@
         transform: translateY(0);
     }
 
-    .middle{
+    .middle {
+        transform: translate(0, 0);
+        width: calc(100% - 2px);
+
         & p {
-            font-size: clamp(0.9rem, 2vw, 1.2rem);
+            font-size: clamp(0.88rem, 2vw, 1rem);
+            line-height: 1.35;
         }
     }
 
     .text {
-        width: clamp(300px, 80vw, 500px);
-        height: clamp(220px, 50vh, 300px);
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    .tags {
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        align-items: center;
+
+        & p {
+            font-size: 0.78rem;
+            padding: 0.25rem 0.55rem;
+            margin: 0;
+            border-width: 2px;
+        }
     }
 }
 
