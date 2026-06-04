@@ -190,3 +190,27 @@ menu.addEventListener('mouseleave', () => {
     });
 
 });
+
+
+/* Function for mobile timeline card interaction */
+
+const cards = document.querySelectorAll(".card-btn");
+
+cards.forEach((card) => {
+    card.addEventListener("click", () => {
+        const slide = card.querySelector(".slide");
+        const middle = card.querySelector(".middle");
+
+        cards.forEach((otherCard) => {
+            otherCard.classList.remove("btn-active");
+            otherCard.querySelector(".slide")?.classList.remove("btn-active");
+            otherCard.querySelector(".middle")?.classList.remove("btn-active");
+        });
+
+        const isActive = card.classList.contains("btn-active");
+
+        card.classList.toggle("btn-active", !isActive);
+        slide?.classList.toggle("btn-active", !isActive);
+        middle?.classList.toggle("btn-active", !isActive);
+    });
+});

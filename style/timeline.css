@@ -38,18 +38,21 @@
     margin-left: 20px; 
     transition: width 1s ease;
 
-    &:hover {
-        width: 500px;
-        
-        & .slide {
-            opacity: 0;
-        }
+    @media (hover: hover) {
+        &:hover {
 
-        & .middle {
-            opacity: 1;
-            transition:opacity 0.5s 0.25s ease-out;
+            width: 500px;
+            
+            & .slide {
+                opacity: 0;
+            }
+
+            & .middle {
+                opacity: 1;
+                transition:opacity 0.5s 0.25s ease-out;
+            }
         }
-    }
+    }   
  
 }
 
@@ -332,11 +335,25 @@
         height: auto;
         min-height: 220px;
         padding: 16px;
-        &:hover {
+
+        &.btn-active {
             width: clamp(300px, 80vw, 500px);
             height: clamp(220px, 50vh, 300px);
+
+
+
         }
     }
+
+    .slide.btn-active {
+        opacity: 0;
+    }
+
+    .middle.btn-active {
+        opacity: 1;
+        transition:opacity 0.5s 0.25s ease-out;
+    }
+
 
     .up,
     .down,
