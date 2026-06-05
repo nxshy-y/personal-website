@@ -173,28 +173,27 @@ const menu = document.querySelector(".menu");
 const menuIcon = document.querySelector(".fa-solid.fa-bars");
 const navPage = document.querySelector(".nav_page");
 const navText = document.querySelectorAll(".nav-text a");
+const cover = document.querySelector(".cover");
+const menu_icon = document.querySelector("nav i");
 
 menuIcon.addEventListener('mouseenter', () => { 
-    navPage.style.opacity = '1';
-    navPage.style.height = '17vh';
-    navText.forEach((text) => {
-        text.style.pointerEvents = 'auto';
-    });
+    navPage.classList.add("hover_active");
+    cover.classList.add("hover_active");
+    menu_icon.classList.add("hover_active");
+
 });
 
 menu.addEventListener('mouseleave', () => {
-    navPage.style.opacity = '0';
-    navPage.style.height = '0vh';
-    navText.forEach((text) => {
-        text.style.pointerEvents = 'none';
-    });
-
+   navPage.classList.remove("hover_active");
+   cover.classList.remove("hover_active");
+   menu_icon.classList.remove("hover_active");
 });
 
 
 /* Function for mobile timeline card interaction */
 
 const cards = document.querySelectorAll(".card-btn");
+
 
 // Add one click handler to every timeline card.
 cards.forEach((card) => {
@@ -227,22 +226,18 @@ cards.forEach((card) => {
         middle?.classList.toggle("btn-active", !isActive);
         show?.classList.toggle("btn-active", !isActive);
         
-        const img = show?.querySelector("img");
-
-      if (img) {
-        
-        console.log("visibility:", styles.visibility);
-        console.log("opacity:", styles.opacity);
-        console.log("width:", styles.width);
-        console.log("height:", styles.height);
-
-        console.log("clientWidth:", img.clientWidth);
-        console.log("clientHeight:", img.clientHeight);
-
-        console.log("naturalWidth:", img.naturalWidth);
-        console.log("naturalHeight:", img.naturalHeight);
-      }
 
         
     });
+});
+
+const menu_btn = document.querySelector("nav i");
+
+menu_btn.addEventListener("click", () =>{
+
+    menu_active = menu_btn.classList.contains("btn-active");
+
+    menu_btn.classList.toggle("btn-active",!menu_active);
+    navPage?.classList.toggle("btn-active",!menu_active);
+    cover?.classList.toggle("btn-active",!menu_active);
 });

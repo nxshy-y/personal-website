@@ -29,6 +29,24 @@ nav {
         transform: translateY(0rem);
     }
 
+    i {
+        border: none;
+        cursor: pointer;
+        opacity: 1;
+        transition: transform 0.3s ease;
+        position: relative;
+        font-size: 30px;
+
+        @media (hover:hover) and (pointer:fine){
+            &.hover_active {
+                transform: rotate(90deg);
+                filter: invert(96%) sepia(93%) saturate(1567%) hue-rotate(287deg) brightness(101%) contrast(100%);
+            }
+        }
+
+
+    }
+
     
 }
 
@@ -45,9 +63,11 @@ nav {
         gap:30px;
         transition:filter 0.01s ease;
 
-        &:hover{
-            filter: invert(67%) sepia(30%) saturate(6239%) hue-rotate(319deg) brightness(97%) contrast(98%);
-        } 
+
+            &:hover{
+                filter: invert(67%) sepia(30%) saturate(6239%) hue-rotate(319deg) brightness(97%) contrast(98%);
+            } 
+        
     }
 
 }
@@ -57,6 +77,7 @@ nav {
 .nav-text {
     font-weight: bold;
     text-align: center;
+    pointer-events: auto;
     width: 20vh;
     transform: translateY(0rem);
     transition: transform 300ms ease;
@@ -66,7 +87,7 @@ nav {
         color: black;
         transition: color 300ms ease;
         font-size: 0.9rem;
-        
+    
         &:hover{
             color: #feb0b8;
             background-color: white;
@@ -74,14 +95,16 @@ nav {
             border-radius: 15px;
             box-shadow: 0 5px 12px #f36767;
 
+
         }
 
         
     }
 
     &:hover {
-        transform: translateY(-0.3rem);
+        transform: translateY(-0.3rem);   
     }
+
 
 
 
@@ -93,34 +116,41 @@ nav {
 .nav_page {
     list-style:none;
     background-color: #556b2fbe;
-    width: 20vh;
-    height: 2vh;
+    display: flex;
+    height: 0vh;
+    flex-direction: column;
+    align-items:center;
+    box-sizing: border-box;    
+    width: clamp(80px, 20vw, 120px);
     line-height: 1.5rem;
-    padding: 10px 0px 10px 0px;
+    padding: clamp(0px, 0vh, 10px) 0;
     transform: translateX(0rem);
     z-index: 5;
     top: 3.6rem;
     position:absolute;
-    opacity: 0;
-    transition: opacity 0.3s 0.2s ease, height 0.3s 0.2s ease;
+    transition: height 0.3s 0.2s ease;
 
-}
-
-i {
-    border: none;
-    cursor: pointer;
-    opacity: 1;
-    transition: transform 0.3s ease;
-    position: relative;
-    font-size: 30px;
-
-    &:hover {
-        transform: rotate(90deg);
-        filter: invert(96%) sepia(93%) saturate(1567%) hue-rotate(287deg) brightness(101%) contrast(100%);
+    @media (hover:hover){
+        &.hover_active{
+            height: 17vh;
+        }
     }
-
-
 }
+
+.cover{
+    opacity: 0;
+    margin-top: 10px;
+    transition: opacity 0.3s ease-out;
+
+    @media (hover:hover){
+        &.hover_active{
+            opacity:1;
+            transition: opacity 1s ease;
+        }
+    }
+}
+
+
 
 .menu {
 
@@ -146,3 +176,46 @@ i {
     }
 }
 
+@media (max-width: 1024px) and (hover:none) {
+    
+    
+
+    .nav_page {
+
+        height: 100dvh;
+        /* transform: translateX(-15px); */
+        opacity: 1;
+        width: 0px;
+        transition:  width 0.3s 0.2s ease;
+        left: clamp(2px,-1vw,20px);
+        &.btn-active{   
+            width: clamp(80px, 20vw, 120px);               
+            /* transform: translateX(0); */
+        }
+
+
+
+    }
+
+    .cover{
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        &.btn-active{
+            opacity:1;
+            transition: opacity 1s ease-out;
+        }
+    }
+
+
+    /*Makes sure i acts as a button*/
+    nav {
+        i {
+            &.btn-active {
+                transform: rotate(90deg);
+                filter: invert(96%) sepia(93%) saturate(1567%) hue-rotate(287deg) brightness(101%) contrast(100%);
+
+            }
+        }
+    }
+    
+}
