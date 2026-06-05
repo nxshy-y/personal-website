@@ -422,15 +422,14 @@
     .timeline::before{
         content: '';
         height: 80%;
-        width: 2px;
+        width: 0.3rem;
         position:absolute;
-        background-color: black;
-        transform: translateX(clamp(80px,20vw, 100px));
+        border-radius: 10px;
+        background: #c3a6cb; 
+         left: clamp(-50px, calc(20vw - 80px), 100px);
        
     }
-
-
-    
+   
     .down, .up{
         
         .circle{
@@ -446,11 +445,11 @@
 
     .project{
         width: 100%;
-        left: clamp(5px, 20vh, 86px);
+        left: clamp(-50px, calc(20vw - 90px), 100px);
     }
 
     .card {
-        margin-left: clamp(10px, 30vh, 100px);
+        margin-left: clamp(-10px, 30vw, 100px);
     }
 
 
