@@ -78,7 +78,7 @@ nav {
     font-weight: bold;
     text-align: center;
     pointer-events: auto;
-    width: 20vh;
+    width: clamp(15px,20vw,120px);
     transform: translateY(0rem);
     transition: transform 300ms ease;
     
@@ -86,7 +86,7 @@ nav {
         text-decoration: none;
         color: black;
         transition: color 300ms ease;
-        font-size: 0.9rem;
+        font-size: clamp(12px,2vw,15px);;
     
         &:hover{
             color: #feb0b8;
@@ -182,15 +182,20 @@ nav {
 
     .nav_page {
 
-        height: 8dvh;
-        
+        height: 8.3dvh;
+
+        z-index: 999;
         /* transform: translateX(-15px); */
-        opacity: 1;
-        width: 80%;
+        opacity: 1; 
+        width: clamp(1px, 0vw, 110px);
         transition:  width 0.3s 0.2s ease;
-        left: clamp(2px,-1vw,20px);
-        &.btn-active{   
-            width: clamp(80px, 20vw, 120px);               
+        left: 100%;
+        z-index: 1;
+        top: -5%;
+        background-color: #556b2f;
+        
+        &.btn-active{       
+            width: clamp(830px,20vw,1000px);  
             /* transform: translateX(0); */
         }
 
@@ -199,19 +204,22 @@ nav {
     }
 
     .cover{
-        opacity: 0;
+        height: 8.3dvh;
         display: flex;
+        width:  100%;
         flex-direction: row;
-        transition: opacity 0.3s ease;
+        transition: opacity 1s ease;
         &.btn-active{
-            opacity:1;
+            opacity:1; 
             transition: opacity 1s ease-out;
         }
     }
 
 
+
     /*Makes sure i acts as a button*/
     nav {
+  
         i {
             &.btn-active {
                 transform: rotate(90deg);
