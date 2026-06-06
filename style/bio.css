@@ -41,17 +41,9 @@
     color: #f36767;
     -webkit-text-stroke: 1px black;
     position: relative;
+    margin-bottom: 0px;
     font-size: clamp(1.6rem, 2vw + 1.15rem, 2.35rem);
 
-    &::after {
-        content: " ";
-        position: absolute; 
-        width: 45%;
-        background-color: black;
-        display: inline-block;
-        height: 3px;
-        transform: scale(0);
-    }
 } 
 
 
@@ -120,17 +112,4 @@
 }
 
 
-
-.Biography.animate h3::after{
-    animation: growLine 1s linear forwards;
-}
-
-@keyframes growLine {
-    from{
-        transform: scale(0.2);
-    }
-    to{
-        transform: scale(0.5);
-    }
-} 
  

@@ -43,11 +43,11 @@
     &::after{
         content: " ";
         position: absolute; 
-        width: 60%;
+        width: 100rem;
         background-color: black;
-        height: 0.1875rem;
+        height: 0.8rem;
         display: block;
-        left: 20%;
+        right:-78%;
         transform: scale(0.2);
     }
 
