@@ -22,11 +22,17 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.441);
 }
 
+.my-picture {
+    height: auto;
+    width: clamp(18rem, 92vw, 36rem);
+    background-color: red;
+}
 
 .About-me {
     display: flex;
-    justify-content: flex-end;
-    align-items: center; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
 
     position: relative;
@@ -64,7 +70,24 @@
     margin: 0;
 }
 
+.Biography::before {
+    content: " ";
+    position: absolute;
+    background-color: #c3a6cb;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 36rem;
+    height: 100%;
+    inset: 0;
+    z-index: -1;
+    transform: translateX(0%) translateY(0%);
+    transition: transform 1s ease ;
+
+
+}
+
 @media (max-width: 500px) {
+
     .Biography {
         width: min(100%, 22rem);
         padding: 0.9rem;
@@ -84,28 +107,21 @@
         font-size: 0.92rem;
     }
 
-
-}
-
-.Biography::before {
-    content: " ";
-    position: absolute;
-    background-color: #c3a6cb;
-    border-radius: 25px;
-    width: 100%;
-    max-width: 36rem;
-    height: 100%;
-    inset: 0;
-    z-index: -1;
-    transform: translateX(0%) translateY(0%);
-    transition: transform 1s ease ;
-}
-
-@media (max-width: 500px) {
     .Biography::before {
         content: none;
     }
+
+
 }
+
+
+@media (max-width: 900px) {
+    .About-me {
+        flex-direction: column;
+    }
+
+}
+
 
 .Biography.animate::before{
     transform: translateX(6.6%) translateY(6.6%);
