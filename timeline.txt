@@ -11,3 +11,8 @@ General Sections:
 
 Biography:
 -Choose picture and make sure it's flexible 
+
+Timeline: 
+-set animation for timeline and cards when in mobile or tablet 
+
+Total Time; 30min to an 1 hour 
