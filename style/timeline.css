@@ -26,7 +26,7 @@
 
 .card {
     width: 300px;
-    height: 220px;
+    height: 225px;
     background-color: #ffafb8;
     border-radius: 12px;
     box-shadow: 0 5px 12px #f36767;
@@ -110,13 +110,14 @@
 .middle {
   transition: .5s ease;
   opacity: 0;
-  height: 150px;
+  height: 170px;
   visibility: hidden;
   transform: translate(1rem, 1rem);
   text-align: left; 
   transition: opacity 0.1s ease-out;
   & p{
     font-size: 1rem;
+    margin-bottom: -20px;
   }  
 }
 
@@ -333,10 +334,11 @@
             height: auto;
             min-height: 220px;
             padding: 16px;
+            opacity: 1;
     
             &.btn-active {
                 width: clamp(300px, 80vw, 500px);
-                height: clamp(220px, 220vh, 250px);
+                height: clamp(220px, 220vh, 255px);
             }
 
             h3 {
@@ -371,7 +373,6 @@
             display: flex;
             visibility: visible;
             flex-direction: column;
-            outline: 2px solid red;
             gap: 0.45rem;
             padding-top: 0.2rem;
     }
@@ -387,6 +388,7 @@
         & p {
             font-size: clamp(0.88rem, 2vw, 1rem);
             line-height: 1.35;
+            margin-bottom: 5px;
         }
     }
 
@@ -451,6 +453,7 @@
 
     .card {
         margin-left: clamp(-10px, 30vw, 100px);
+
     }
 
 
