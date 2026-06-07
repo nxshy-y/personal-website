@@ -78,7 +78,7 @@ nav {
     font-weight: bold;
     text-align: center;
     pointer-events: auto;
-    width: clamp(15px,20vw,120px);
+    width: clamp(20px,20vw,120px);
     transform: translateY(0rem);
     transition: transform 300ms ease;
     
@@ -86,12 +86,12 @@ nav {
         text-decoration: none;
         color: black;
         transition: color 300ms ease;
-        font-size: clamp(12px,2vw,15px);;
+        font-size: clamp(12px,2vw,15px);
     
         &:hover{
             color: #feb0b8;
             background-color: white;
-            padding: 1px 20px 1px 20px;
+            padding: clamp(1px, 0.2vw, 4px) clamp(12px, 2vw, 20px);
             border-radius: 15px;
             box-shadow: 0 5px 12px #f36767;
 
@@ -139,7 +139,7 @@ nav {
 
 .cover{
     opacity: 0;
-    margin-top: 10px;
+    margin-top: 14px;
     transition: opacity 0.3s ease-out;
 
     @media (hover:hover){
@@ -177,6 +177,7 @@ nav {
 }
 
 @media (max-width: 1024px) and (hover:none) {
+
     
     
 
@@ -187,7 +188,7 @@ nav {
         z-index: 999;
         /* transform: translateX(-15px); */
         opacity: 1; 
-        width: clamp(1px, 0vw, 110px);
+        width: clamp(0px, 0vw, 110px);
         transition:  width 0.3s 0.2s ease;
         left: 100%;
         z-index: 1;
@@ -208,13 +209,21 @@ nav {
         display: flex;
         width:  100%;
         flex-direction: row;
-        transition: opacity 1s ease;
+        transition: opacity 0.7s ease;
         &.btn-active{
             opacity:1; 
-            transition: opacity 1s ease-out;
+            transition: opacity 1s 0.3s ease-out;
         }
+
+        .nav-text:first-child {
+            width: clamp(100px, 15vw, 900px);
+        }
+
     }
 
+    .nav-text a {
+        font-size: clamp(12px,2vw,20px);
+    }
 
 
     /*Makes sure i acts as a button*/

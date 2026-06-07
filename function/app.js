@@ -27,10 +27,7 @@ const sections = document.querySelectorAll("section");
 
 const pageName = document.querySelector("#page-name");
 
-const messages = [
-  document.querySelector("[data-fs-success]"),
-  document.querySelector("[data-fs-error]")
-];
+const successMsg = document.querySelector("[data-fs-success]");
 
 
 // --------------------
@@ -114,24 +111,26 @@ sections.forEach((section) => {
 // FORM MESSAGE OBSERVER
 // --------------------
 
-const messageObserver = new IntersectionObserver((entries) => {
+const mutationObserver = new MutationObserver(() => {
+  
+    if (successMsg.hasAttribute("data-fs-active")) {
+      
+        setTimeout(() => {
+            successMsg.classList.add("remove");
 
-  entries.forEach((entry) => {
+            setTimeout(() => {
+                successMsg.removeAttribute("data-fs-active");
+                successMsg.classList.remove("remove");
+            }, 500);
+        }, 3000);
 
-    entry.target.classList.toggle("remove", entry.isIntersecting);
-
-  });
+    }
 
 });
 
-
-// Observe form messages
-messages.forEach((message) => {
-
-  if (message) {
-    messageObserver.observe(message);
-  }
-
+mutationObserver.observe(successMsg, {
+    attributes: true,
+    attributeFilter: ["data-fs-active"]
 });
 
 // --------------------

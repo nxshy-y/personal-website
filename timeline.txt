@@ -1,9 +1,3 @@
-Navbar: 
-Make text flexible for mobile versus desktop
-Make padding also flexible 
-
-Contact: 
--Make it so JS removes message pop up 
 
 General Sections:
 -Add some margin left as screen becomes smaller except for timeline and contact 

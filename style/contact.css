@@ -126,22 +126,23 @@
     border: 2px solid black;
 }
 
-[data-fs-success],
-[data-fs-error] {
+[data-fs-success],[data-fs-active]{
   color: lightcoral;
   font-weight: bold;
   margin-top: 1rem;
-  padding: 20px;
-  opacity: 1;
+  height: auto;
+  width:80px;
+  z-index: 1;
   transform: translateY(0);
+  
+    &.remove {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+
+    }
 }
 
-[data-fs-success].remove,
-[data-fs-error].remove {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.5s 2s ease, transform 0.5s 2s ease;
-}
 
 @media (max-width: 500px) {
     .contact-form {
