@@ -9,4 +9,9 @@ Biography:
 Timeline: 
 -set animation for timeline and cards when in mobile or tablet 
 
+NavBar:
+-Change font in navbar 
+
+Fix resume Link
+
 Total Time; 30min to an 1 hour 

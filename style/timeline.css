@@ -307,11 +307,12 @@
 
 @media (max-width: 900px) {
 
-    .timeline.in-view .card,timeline.in-view .circle{
+    .timeline.in-view .card{
 
         animation: none;
         transform: none;
     }
+
 
     .timeline{
         height: auto;
@@ -417,27 +418,33 @@
 
 @media (min-width:400px) and (max-width: 900px) {
     
-    .timeline.in-view .card,timeline.in-view .circle{
-        animation: none;
-        transform: none;
-    }
-
     .timeline::before{
         content: '';
-        height: 80%;
+        height: 0%;
         width: 0.3rem;
         position:absolute;
         border-radius: 10px;
         background: #c3a6cb; 
-         left: clamp(-50px, calc(20vw - 80px), 100px);
+        left: clamp(-50px, calc(20vw - 80px), 100px);
+        transition: height 3s ease;
        
     }
+
+
+    .timeline.one-time::before {
+        height: 80%;
+    }
    
+    .timeline.one-time .card {
+        transform: translateX(5px);
+        opacity: 1;
+    }
+
     .down, .up{
         
         .circle{
             inset: 0;
-            opacity: 1;
+            opacity: 0;
             position:absolute;
             visibility: visible;  
 
@@ -453,9 +460,11 @@
 
     .card {
         margin-left: clamp(-10px, 30vw, 100px);
+         transform: translateX(0px);
+         opacity: 0;
+         transition: opacity 0.5s ease, transform 0.5s ease;
 
     }
-
 
     
 }
