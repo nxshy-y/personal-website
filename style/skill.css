@@ -127,6 +127,7 @@
         flex-wrap: wrap;
         align-content: center;
         row-gap: min(4rem,3rem);
+        margin-left: clamp(20px, 1vw, 60px);
         justify-content:flex-start;
 
         & .skill-shadow.animate {

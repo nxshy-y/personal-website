@@ -110,7 +110,7 @@
 .middle {
   transition: .5s ease;
   opacity: 0;
-  height: 170px;
+  height: auto;
   visibility: hidden;
   transform: translate(1rem, 1rem);
   text-align: left; 
@@ -305,7 +305,9 @@
  NESTED MEDIA QUERY
 ***/
 
-@media (max-width: 900px) {
+
+
+@media (max-width: 1000px) {
 
     .timeline.in-view .card{
 
@@ -332,14 +334,13 @@
     .card {
             margin-bottom: 1rem;
             width: min(100%, 290px);
-            height: auto;
             min-height: 220px;
             padding: 16px;
             opacity: 1;
     
             &.btn-active {
                 width: clamp(300px, 80vw, 500px);
-                height: clamp(220px, 220vh, 255px);
+                padding-bottom: 20px;
             }
 
             h3 {
@@ -384,7 +385,7 @@
 
     .middle {
         transform: translate(0, 0);
-        width: calc(100% - 2px);
+        width: fit-content;
 
         & p {
             font-size: clamp(0.88rem, 2vw, 1rem);
@@ -416,7 +417,7 @@
     }
 }
 
-@media (min-width:400px) and (max-width: 900px) {
+@media (min-width:400px) and (max-width: 1000px) {
     
     .timeline::before{
         content: '';
@@ -425,7 +426,7 @@
         position:absolute;
         border-radius: 10px;
         background: #c3a6cb; 
-        left: clamp(-50px, calc(20vw - 80px), 100px);
+        left: clamp(20px, 4vw, 50px);
         transition: height 3s ease;
        
     }
@@ -455,17 +456,38 @@
 
     .project{
         width: 100%;
-        left: clamp(-50px, calc(20vw - 90px), 100px);
+        left: clamp(0px, 3vw, 30px);
     }
 
     .card {
-        margin-left: clamp(-10px, 30vw, 100px);
+         margin-left: clamp(0px, 10vw, 60px);
          transform: translateX(0px);
          opacity: 0;
          transition: opacity 0.5s ease, transform 0.5s ease;
 
     }
 
+
+
     
+}
+
+@media (min-width: 900px) {
+    .card {
+        height: 220px;
+    }
+    .middle {
+        height:170px;
+    }
+
+}
+
+@media (max-width: 400px){
+    .middle {
+        height:170px;
+    }
+    .card {
+        height: 240px;
+    }
 }
 

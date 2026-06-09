@@ -86,7 +86,7 @@ nav {
         text-decoration: none;
         color: black;
         transition: color 300ms ease;
-        font-size: clamp(12px,2vw,15px);
+        font-size: clamp(18px, 4vw, 18px);
     
         &:hover{
             color: #feb0b8;
