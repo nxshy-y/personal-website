@@ -89,7 +89,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: clamp(20px, 4vw, 60px);
+    gap: clamp(20px, 5vw, 60px);
     padding: 0 1rem;
     align-items: center;
     position: relative;
@@ -119,16 +119,13 @@
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .Skills {
 
         height: auto;
-        flex-direction: row;
-        flex-wrap: wrap;
         align-content: center;
         row-gap: min(4rem,3rem);
-        margin-left: clamp(20px, 1vw, 60px);
-        justify-content:flex-start;
+        justify-content:center;
 
         & .skill-shadow.animate {
             transform: translate(2rem, 2rem);  
@@ -139,13 +136,16 @@
         flex: 1 1 280px;
         max-width: 350px;
     }
+
+    
 }
 
-@media (max-width: 500px){
+@media (min-width: 900px){
     .Skills {
-        padding-bottom: 5 rem;
+        justify-content: center;
     }
 }
+
 
 
 

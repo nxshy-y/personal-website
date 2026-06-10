@@ -23,10 +23,25 @@
 }
 
 .my-picture {
-    height: auto;
+    height: 640px;
+    transform: translateY(-70px);
     width: clamp(18rem, 92vw, 36rem);
-    background-color: red;
+    margin-left: 20px;
+    border-radius: 20px;
 }
+
+.Professional-Photo{
+    height: 640px;
+    transform: translateY(0px);
+    width: clamp(18rem, 92vw, 36rem);
+    border: 10px solid #c3a6cb;
+    border-radius: 20px;
+    object-fit: cover;
+
+}
+
+
+
 
 .About-me {
     display: flex;

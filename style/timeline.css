@@ -309,12 +309,6 @@
 
 @media (max-width: 1000px) {
 
-    .timeline.in-view .card{
-
-        animation: none;
-        transform: none;
-    }
-
 
     .timeline{
         height: auto;
@@ -488,6 +482,12 @@
     }
     .card {
         height: 240px;
+    }
+
+    .timeline.in-view .card{
+
+        animation: none;
+        transform: none;
     }
 }
 
