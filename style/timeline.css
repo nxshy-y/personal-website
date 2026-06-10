@@ -335,6 +335,7 @@
             &.btn-active {
                 width: clamp(300px, 80vw, 500px);
                 padding-bottom: 20px;
+                height: auto;
             }
 
             h3 {
@@ -370,6 +371,7 @@
             visibility: visible;
             flex-direction: column;
             gap: 0.45rem;
+            height: auto;
             padding-top: 0.2rem;
     }
 

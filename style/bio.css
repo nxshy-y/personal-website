@@ -23,15 +23,15 @@
 }
 
 .my-picture {
-    height: 640px;
+    height: clamp(300px, 70vw, 640px);
     transform: translateY(-70px);
     width: clamp(18rem, 92vw, 36rem);
-    margin-left: 20px;
+    margin-left: clamp(5px, 2vw, 20px);
     border-radius: 20px;
 }
 
 .Professional-Photo{
-    height: 640px;
+    height: clamp(300px, 70vw, 640px);
     transform: translateY(0px);
     width: clamp(18rem, 92vw, 36rem);
     border: 10px solid #c3a6cb;
