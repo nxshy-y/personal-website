@@ -20,11 +20,11 @@
     row-gap: 15px;
     width: min(100%, 460px);
     box-sizing: border-box;
-    background-color: #c3a6cb;
+    background-color: var(--color-accent);
     padding: clamp(24px, 5vw, 50px);
     padding-bottom: 40px;
     border-radius: 15px;
-    border: 8px solid #feb0b8;
+    border: 8px solid var(--color-highlight);
     opacity: 0;
     transform: translateY(-100px);
     transition: transform 1s ease ,opacity 1s ease;
@@ -51,8 +51,8 @@
 }
 
 .contact-left-title h2{
-    -webkit-text-stroke: 1.5px #f75454;
-    color:#feb0b8;
+    -webkit-text-stroke: 1.5px var(--color-primary-strong);
+    color: var(--color-highlight);
     font-family: 'Raleway', sans-serif;
     opacity: 0;
     transform: translateY(-30px);
@@ -63,7 +63,7 @@
 }
 
 .contact-left-title hr {
-    background-color: #556b2fbe;
+    background-color: var(--color-nav);
     height: 5px;
     border:none;
     border-radius: 10px;
@@ -93,7 +93,7 @@
 }
 
 .email-submit {
-    background-color: #556b2fbe;
+    background-color: var(--color-nav);
     border: none;
     width: min(100%, 100px);
     height: 30px;
@@ -109,7 +109,7 @@
 
     & p {
         font-size: 1rem;
-        color: #ffafb8;
+        color: var(--color-primary-soft);
         font-weight: bold;
         font-family: 'Raleway', sans-serif;
     }
@@ -131,7 +131,7 @@
 
 [data-fs-success][data-fs-active]{
   background-color: white;
-  border: 2px solid #ffafb8;
+    border: 2px solid var(--color-primary-soft);
   font-weight: bold;
   font-size: clamp(12px, 1.5vw, 15px);
   margin-top: 1rem;
@@ -152,7 +152,8 @@
 
 
 @media (max-width: 500px) {
-    .contact-form {
+    .Contact-Form {
         margin-top: 5rem;
     }
 }
+

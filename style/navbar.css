@@ -8,7 +8,7 @@ nav {
   z-index: 1;
 } */
 nav {
-    background-color: 	#556b2fbe;
+    background-color: var(--color-nav);
     position: fixed;
     top: 0;
     left: 0;
@@ -40,7 +40,7 @@ nav {
         @media (hover:hover) and (pointer:fine){
             &.hover_active {
                 transform: rotate(90deg);
-                filter: invert(96%) sepia(93%) saturate(1567%) hue-rotate(287deg) brightness(101%) contrast(100%);
+                filter: var(--icon-hover-filter);
             }
         }
 
@@ -58,17 +58,6 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-items:center; 
-    
-    & img {
-        gap:30px;
-        transition:filter 0.01s ease;
-
-
-            &:hover{
-                filter: invert(67%) sepia(30%) saturate(6239%) hue-rotate(319deg) brightness(97%) contrast(98%);
-            } 
-        
-    }
 
 }
 
@@ -89,11 +78,11 @@ nav {
         font-size: clamp(18px, 4vw, 18px);
     
         &:hover{
-            color: #feb0b8;
+            color: var(--color-highlight);
             background-color: white;
             padding: clamp(1px, 0.2vw, 4px) clamp(12px, 2vw, 20px);
             border-radius: 15px;
-            box-shadow: 0 5px 12px #f36767;
+            box-shadow: var(--shadow-accent);
 
 
         }
@@ -115,7 +104,7 @@ nav {
 
 .nav_page {
     list-style:none;
-    background-color: #556b2fbe;
+    background-color: var(--color-nav);
     display: flex;
     height: 0vh;
     flex-direction: column;
@@ -168,8 +157,8 @@ nav {
     align-items:center;
     display: flex;
     flex-direction: row;
-    color:  #feb0b8;
-    -webkit-text-stroke: 1.5px #f36767 ;
+    color: var(--color-highlight);
+    -webkit-text-stroke: 1.5px var(--color-primary);
 
     & h1 {
         font-size: 2rem;
@@ -232,7 +221,7 @@ nav {
         i {
             &.btn-active {
                 transform: rotate(90deg);
-                filter: invert(96%) sepia(93%) saturate(1567%) hue-rotate(287deg) brightness(101%) contrast(100%);
+                filter: var(--icon-hover-filter);
 
             }
         }

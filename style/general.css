@@ -1,6 +1,19 @@
+:root {
+    --color-bg: #efe9e2;
+    --color-primary: #f36767;
+    --color-primary-strong: #f75454;
+    --color-primary-soft: #ffafb8;
+    --color-accent: #c3a6cb;
+    --color-nav: #556b2fbe;
+    --color-highlight: #feb0b8;
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.441);
+    --shadow-accent: 0 5px 12px var(--color-primary);
+    --icon-hover-filter: invert(67%) sepia(30%) saturate(6239%) hue-rotate(319deg) brightness(97%) contrast(98%);
+ }
+
 body {
     width: 100%;
-    background-color: #efe9e2;
+    background-color: var(--color-bg);
 }
 
 * {
@@ -13,6 +26,16 @@ section {
     min-height: 100dvh;
     scroll-snap-align: start;
 
+}
+
+.Info {
+    transition: filter 0.15s ease;
+}
+
+@media (hover:hover) and (pointer:fine) {
+    .Info:hover {
+        filter: var(--icon-hover-filter);
+    }
 }
 
 @media (max-width: 500px) {
