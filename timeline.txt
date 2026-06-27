@@ -12,4 +12,5 @@ Timeline:
 NavBar:
 -Change font in navbar 
 
+Fix resume Link
 

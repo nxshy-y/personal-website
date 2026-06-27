@@ -184,7 +184,7 @@
 .timeline.in-view .circle {
     animation: popup 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
     animation-delay: 0.05s;
-
+}
 /* Desktop/default timeline card sizing */
 .card {
     height: 220px;
@@ -194,7 +194,7 @@
     height:170px;
 }
 
-}
+
 
 
 .timeline.in-view .card {
@@ -316,9 +316,7 @@
 ***/
 
 
-
 @media (max-width: 1000px) {
-
 
     .timeline{
         height: auto;
@@ -425,9 +423,14 @@
 
 @media (min-width: 401px) and (max-width: 1000px) {
     
+    .timeline.in-view .card,timeline.in-view .circle{
+        animation: none;
+        transform: none;
+    }
+
     .timeline::before{
         content: '';
-        height: 0%;
+        height: 80%;
         width: 0.3rem;
         position:absolute;
         border-radius: 10px;
@@ -436,22 +439,12 @@
         transition: height 3s ease;
        
     }
-
-
-    .timeline.one-time::before {
-        height: 80%;
-    }
    
-    .timeline.one-time .card {
-        transform: translateX(5px);
-        opacity: 1;
-    }
-
     .down, .up{
         
         .circle{
             inset: 0;
-            opacity: 0;
+            opacity: 1;
             position:absolute;
             visibility: visible;  
 
@@ -466,13 +459,9 @@
     }
 
     .card {
-         margin-left: clamp(0px, 10vw, 60px);
-         transform: translateX(0px);
-         opacity: 0;
-         transition: opacity 0.5s ease, transform 0.5s ease;
+        margin-left: clamp(-10px, 30vw, 100px);
 
     }
-
 
 
     

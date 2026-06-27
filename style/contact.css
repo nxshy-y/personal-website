@@ -10,8 +10,7 @@
 .contact-section {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
 #my-form {
@@ -56,8 +55,6 @@
     font-family: 'Raleway', sans-serif;
     opacity: 0;
     transform: translateY(-30px);
-    font-size: 38px;
-    /* font-size: clamp(40px, 3vw, 50px); */
     transition: transform 1s ease ,opacity 1s ease;
 
 }
@@ -133,18 +130,15 @@
   background-color: white;
     border: 2px solid var(--color-primary-soft);
   font-weight: bold;
-  font-size: clamp(12px, 1.5vw, 15px);
   margin-top: 1rem;
   height: auto;
- width: clamp(150px, 15vw, 200px);
-  opacity: 1;
+  width:80px;
   z-index: 1;
-  text-align: center;
-  transform: translateY(10px);
+  transform: translateY(0);
   
     &.remove {
         opacity: 0;
-        transform: translateY(0px);
+        transform: translateY(-10px);
         transition: opacity 0.5s ease, transform 0.5s ease;
 
     }
